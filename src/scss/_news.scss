@@ -1,0 +1,227 @@
+@use "utils";
+@use "media";
+
+.news {
+  @include utils.blockWrapper;
+  margin-bottom: 8rem;
+  background-color: var(--text-color);
+  color: #e6e3d6;
+}
+
+.news__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+
+  @include media.breakpoint(mobile) {
+    padding: 4rem 0;
+  }
+}
+
+.news__heading {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  margin-bottom: 12rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.054rem;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  }
+}
+
+.news__more {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  @include media.breakpoint(mobile) {
+    order: 10;
+    margin: 0;
+    margin-top: 6rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    align-self: stretch;
+  }
+}
+
+.news__more-text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
+.news__more-arrow {
+  flex-shrink: 0;
+  @include media.breakpoint(mobile) {
+    transform: rotate(90deg);
+  }
+}
+
+.news__more-btn {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 3.8rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.014rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  transition: color 0.2s, background-color 0.2s;
+  border-radius: 4.5rem;
+  border: 0.2rem solid white;
+  color: white;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: white;
+      color: var(--text-color);
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.014rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+  }
+}
+
+.news__slider {
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+    width: calc(25% - 2rem * 3 / 4);
+    margin-right: 2rem;
+    @include media.breakpoint(mobile) {
+      width: 31rem;
+      margin-right: 0.8rem;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.news__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(230, 227, 214, 0.4);
+  padding: 2rem;
+}
+
+.news__card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: rgba(230, 227, 214, 1);
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
+.news__card-image-container {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.news__card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.news__card-title {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.072rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  margin-bottom: 2rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.048rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+}
+
+.news__card-desc {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: #e6e3d6;
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}

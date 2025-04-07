@@ -1,0 +1,65 @@
+<div class="callback-modal js-modal" id="callback-modal">
+    <div class="callback-modal__inner">
+        <button class="callback-modal__close" type="button">
+            <svg width="14" height="14" aria-hidden="true">
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+        <h3 class="callback-modal__title">
+            Заполните форму и мы свяжемся
+            с вами в ближайшее время!
+        </h3>
+        <form action="/" method="POST" class="callback-modal__form">
+            <div class="callback-modal__form-fields">
+                <div class="callback-modal__form-field callback-modal__form-field--fullwidth">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="text" class="callback-modal__input" name="your-name" required=""
+                            placeholder="ФИО*">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="email" class="callback-modal__input" name="your-email" required=""
+                            placeholder="E-mail*">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <input type="tel" class="callback-modal__input" name="your-phone" required=""
+                            placeholder="ваш номер*">
+                    </div>
+                </div>
+                <div class="callback-modal__form-field">
+                    <div class="callback-modal__form-input-wrapper">
+                        <textarea name="your-comment" class="callback-modal__input"
+                            placeholder="какой вопрос вас интересует?"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="callback-modal__form-policy">
+                <label class="callback-modal__form-policy-checkbox">
+                    <input type="checkbox" class="callback-modal__form-policy-checkbox-input" value="Y" name="policy"
+                        required="">
+                    <span class="callback-modal__form-policy-checkbox-mark">
+
+                    </span>
+                    <span class="callback-modal__form-policy-checkbox-text">
+                        Нажимая кнопку, я принимаю условия <a href="#">политики</a> и <a href="#">пользовательского
+                            соглашения</a>
+                    </span>
+                </label>
+            </div>
+            <div class="callback-modal__form-controls">
+                <button class="callback-modal__form-submit" type="submit">
+                    Оставить заявку
+                </button>
+                <span class="callback-modal__form-submit-text">
+                    <span class="callback-modal__form-submit-arrow">
+                        →
+                    </span>
+                    мы ответим на любые ваши вопросы
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

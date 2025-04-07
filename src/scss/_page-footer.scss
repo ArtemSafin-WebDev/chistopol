@@ -1,0 +1,209 @@
+@use "utils";
+@use "media";
+
+.page-footer {
+  @include utils.blockWrapper;
+}
+
+.page-footer__content {
+  @include utils.blockContent;
+  padding-bottom: 3.8rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 28rem;
+  gap: 30rem;
+  @include media.breakpoint(mobile) {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    gap: 6rem;
+  }
+}
+
+.page-footer__has-questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-footer__has-questions-title {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  text-wrap: balance;
+  margin-bottom: 4rem;
+  max-width: 96rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.054rem;
+    text-transform: uppercase;
+    margin-bottom: 4.4rem;
+    max-width: none;
+  }
+}
+
+.page-footer__has-questions-line {
+  width: 6rem;
+  height: auto;
+  margin-bottom: 4rem;
+  @include media.breakpoint(mobile) {
+    width: 3.6rem;
+    margin-bottom: 4.4rem;
+  }
+}
+
+.page-footer__has-questions-link {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.014rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  color: white;
+  transition: color 0.2s, background-color 0.2s;
+  text-align: center;
+  padding: 1.2rem 4rem;
+  border-radius: 30rem;
+  background-color: var(--orange);
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--text-color);
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.014rem;
+    text-transform: uppercase;
+  }
+}
+
+.page-footer__bottom {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 2rem;
+  grid-template-areas: "nav logo logo madeby";
+  align-items: flex-end;
+
+  @include media.breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "logo logo" "madeby madeby";
+    grid-gap: 0.8rem;
+    grid-row-gap: 3rem;
+  }
+}
+
+.page-footer__nav {
+  grid-area: nav;
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.page-footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.page-footer__nav-link {
+  display: block;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.page-footer__logo {
+  grid-area: logo;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.7rem;
+  text-align: center;
+  @include media.breakpoint(mobile) {
+    gap: 2rem;
+  }
+}
+
+.page-footer__logo-image {
+  width: 9rem;
+  height: auto;
+  display: block;
+  @include media.breakpoint(mobile) {
+    width: 6rem;
+  }
+}
+
+.page-footer__logo-text {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
+.page-footer__made-by {
+  grid-area: madeby;
+  justify-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  gap: 12rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    justify-content: space-between;
+    gap: 4rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    justify-self: stretch;
+  }
+}
+
+.page-footer__made-by-logo {
+  width: 3.6055rem;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+  @include media.breakpoint(mobile) {
+    width: 3.6181rem;
+  }
+}

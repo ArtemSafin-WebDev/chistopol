@@ -1,0 +1,219 @@
+@use "utils";
+@use "media";
+
+.achievements {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.achievements__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.achievements__heading {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 20rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+  }
+}
+
+.achievements__learn-more {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  @include media.breakpoint(mobile) {
+    order: 10;
+    margin: 0;
+    margin-top: 4rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    align-self: stretch;
+  }
+}
+
+.achievements__learn-more-text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
+.achievements__learn-more-arrow {
+  flex-shrink: 0;
+  @include media.breakpoint(mobile) {
+    transform: rotate(90deg);
+  }
+}
+
+.achievements__learn-more-btn {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 3.8rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.014rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  transition: color 0.2s, background-color 0.2s;
+  border-radius: 4.5rem;
+  border: 0.2rem solid var(--text-color);
+  color: var(--text-color);
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--text-color);
+      color: white;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.014rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+  }
+}
+
+.achievements__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(40rem, auto) minmax(30rem, auto);
+  position: relative;
+
+  border-radius: 0.5rem;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #b3b3b3;
+    pointer-events: none;
+    inset: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  @include media.breakpoint(mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(15rem, auto);
+  }
+}
+
+.achievements__list-item {
+  border: 1px solid #b3b3b3;
+  border-top: none;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(6n + 1),
+  &:nth-child(6n + 2) {
+    grid-column: span 2;
+
+    .achievements__card-amount {
+      font-size: 9rem;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.27rem;
+      text-transform: uppercase;
+
+      @include media.breakpoint(mobile) {
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 110%;
+        letter-spacing: -0.025rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.achievements__card {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+  flex-grow: 1;
+
+  @include media.breakpoint(mobile) {
+    padding: 2rem;
+  }
+}
+
+.achievements__card-amount {
+  font-size: 7rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.21rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  @include media.breakpoint(mobile) {
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.022rem;
+    text-transform: uppercase;
+  }
+}
+
+.achievements__card-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+}
