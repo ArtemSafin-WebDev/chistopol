@@ -7,15 +7,17 @@ import ourProducts from "./ourProducts";
 import subjects from "./subjects";
 import intro from "./intro";
 import menu from "./menu";
+import smoothScrolling from "./smoothScrolling";
 
 document.addEventListener("DOMContentLoaded", () => {
+  smoothScrolling();
+  menu();
   intro();
   news();
   career();
   partners();
   ourProducts();
   subjects();
-  menu();
 });
 
 window.addEventListener("load", () => {
