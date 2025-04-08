@@ -1,33 +1,97 @@
+<div class="overlay"></div>
 <header class="page-header">
     <div class="page-header__content">
-        <a href="#" class="page-header__logo">
-            <img src="/images/logo-compact.svg" alt="" class="page-header__logo-image">
-        </a>
-        <div class="page-header__toggle">
-            <button class="page-header__toggle-btn">
-                Душевно
-            </button>
-            <button class="page-header__toggle-btn">
-                Чисто
-            </button>
+        <div class="page-header__left">
+            <a href="#" class="page-header__logo">
+                <img src="/images/logo-compact.svg" alt="" class="page-header__logo-image">
+            </a>
+            <div class="page-header__toggle">
+                <button class="page-header__toggle-btn active">
+                    Душевно
+                </button>
+                <button class="page-header__toggle-btn">
+                    Чисто
+                </button>
+                <span class="page-header__toggle-marker">
+
+                </span>
+            </div>
         </div>
-        <div class="page-header__buttons">
-            <ul class="page-header__social-list">
-                <li class="page-header__social-list-item">
-                    <a href="#" class="page-header__social-link">
+        <div class="page-header__right">
+            <div class="page-header__catalog">
+                <a href="#" class="page-header__catalog-btn" type="button">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#burger"></use>
+                    </svg>
+                    Продукция
+                </a>
+            </div>
+            <nav class="page-header__nav">
+                <ul class="page-header__nav-list">
+                    <li class="page-header__nav-list-item">
+                        <a href="#" class="page-header__nav-link">
+                            Направления деятельности
+                        </a>
+                    </li>
+                    <li class="page-header__nav-list-item">
+                        <a href="#" class="page-header__nav-link">
+                            о компании
+                        </a>
+                    </li>
+                    <li class="page-header__nav-list-item">
+                        <a href="#" class="page-header__nav-link">
+                            Контакты
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="page-header__buttons">
+                <ul class="page-header__social-list">
+                    <li class="page-header__social-list-item">
+                        <a href="#" class="page-header__social-link">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="page-header__social-list-item">
+                        <a href="#" class="page-header__social-link">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="page-header__search">
+                    <button class="page-header__search-btn">
                         <svg width="14" height="14" aria-hidden="true">
-                            <use xlink:href="#vk"></use>
+                            <use xlink:href="#search"></use>
                         </svg>
-                    </a>
-                </li>
-                <li class="page-header__social-list-item">
-                    <a href="#" class="page-header__social-link">
-                        <svg width="14" height="14" aria-hidden="true">
-                            <use xlink:href="#telegram"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+                    </button>
+                    <div class="page-header__search-dropdown">
+                        <div class="page-header__search-dropdown-inner">
+                            <h3 class="page-header__search-title">
+                                поиск
+                            </h3>
+                            <div class="page-header__search-wrapper">
+                                <div class="page-header__search-wrapper-inner">
+                                    <form action="/" method="GET" class="page-header__search-form">
+                                        <input type="search" class="page-header__search-input" required=""
+                                            placeholder="поиск по сайту" name="q">
+                                        <button class="page-header__search-submit" type="submit">
+                                            найти
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="page-header__menu-btn">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </div>
 </header>

@@ -5,7 +5,7 @@
   @include utils.blockWrapper;
   margin-bottom: 8rem;
   background-color: #313131;
-  color: #e6e3d6;
+  color: var(--biege);
   @include media.breakpoint(mobile) {
     margin-bottom: 4rem;
   }
@@ -126,16 +126,16 @@
   font-family: var(--dewi-expanded);
   transition: color 0.2s, background-color 0.2s;
   border-radius: 4.5rem;
-  border: 0.2rem solid white;
-  color: white;
+  border: 0.2rem solid var(--biege);
+  color: var(--biege);
   &:link,
   &:visited {
-    color: white;
+    color: var(--biege);
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: white;
+      background-color: var(--biege);
       color: var(--text-color);
     }
   }

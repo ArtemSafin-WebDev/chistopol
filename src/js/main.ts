@@ -6,6 +6,7 @@ import partners from "./partners";
 import ourProducts from "./ourProducts";
 import subjects from "./subjects";
 import intro from "./intro";
+import menu from "./menu";
 
 document.addEventListener("DOMContentLoaded", () => {
   intro();
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   partners();
   ourProducts();
   subjects();
+  menu();
 });
 
 window.addEventListener("load", () => {
