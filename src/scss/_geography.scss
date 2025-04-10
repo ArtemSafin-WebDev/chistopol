@@ -56,7 +56,7 @@
   @include media.breakpoint(mobile) {
     max-width: none;
     display: flex;
-    overflow-y: hidden;
+    // overflow-y: hidden;
 
     width: auto;
     margin: 0 calc(-1 * var(--content-padding));
@@ -115,7 +115,7 @@
   grid-template-columns: 1fr 1.5fr 2.4fr;
   grid-gap: 2rem;
   align-items: flex-end;
-  align-self: flex-end;
+  align-self: stretch;
   margin-top: -15rem;
   pointer-events: none;
   @include media.breakpoint(mobile) {
@@ -130,32 +130,52 @@
 .geography__popovers {
   grid-column: 3 / 4;
   position: relative;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+
+  &:has(.geography__popover.active) {
+    grid-template-rows: 1fr;
+  }
   @include media.breakpoint(mobile) {
     grid-column: 1 / -1;
   }
 }
 
-.geography__popover {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s, visibility 0s linear 0.4s;
-  z-index: 10;
-  @include media.breakpoint(mobile) {
-    padding-top: 2rem;
-  }
+.geography__popovers-inner {
+  overflow: hidden;
+}
 
+.geography__popover {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
   &.active {
-    position: relative;
-    z-index: 10;
-    opacity: 1;
-    visibility: inherit;
-    transition: opacity 0.4s, visibility 0.4s;
+    grid-template-rows: 1fr;
   }
+  // @include media.breakpointMF(small-tablet) {
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   width: 100%;
+  //   height: auto;
+  //   opacity: 0;
+  //   visibility: hidden;
+  //   transition: opacity 0.4s, visibility 0s linear 0.4s;
+  //   z-index: 10;
+
+  //   &.active {
+  //     position: relative;
+  //     z-index: 10;
+  //     opacity: 1;
+  //     visibility: inherit;
+  //     transition: opacity 0.4s, visibility 0.4s;
+  //   }
+  // }
+}
+
+.geography__popover-inner {
+  overflow: hidden;
 }
 
 .geography__popover-title {
@@ -176,6 +196,7 @@
     letter-spacing: -0.048rem;
     text-transform: uppercase;
     padding: 2rem 0;
+    padding-top: 4rem;
   }
 }
 
@@ -400,7 +421,7 @@
   transition: opacity 0.4s, visibility 0s linear 0.4s;
   z-index: 10;
   @include media.breakpoint(mobile) {
-    width: 70vw;
+    width: 60vw;
   }
 }
 

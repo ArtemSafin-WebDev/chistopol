@@ -9,10 +9,12 @@ import intro from "./intro";
 import menu from "./menu";
 import smoothScrolling from "./smoothScrolling";
 import geography from "./geography";
+import toggleVersions from "./toggleVersions";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   menu();
+  toggleVersions();
   intro();
   news();
   career();
@@ -20,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ourProducts();
   subjects();
   geography();
+  toggleVersions();
 });
 
 window.addEventListener("load", () => {

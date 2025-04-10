@@ -1,7 +1,8 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, Draggable, Flip } from "gsap/all";
+import { InertiaPlugin } from "./gsap/InertiaPlugin.js";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin, Flip);
 
 export default function geography() {
   const elements = Array.from(
@@ -14,6 +15,15 @@ export default function geography() {
     const popovers = Array.from(
       element.querySelectorAll<HTMLElement>(".geography__popover")
     );
+
+    const popoverContainer = element.querySelector<HTMLElement>(
+      ".geography__popovers"
+    );
+
+    popoverContainer?.addEventListener("transitionend", () => {
+      ScrollTrigger.refresh();
+    });
+
     points.forEach((point) => {
       const button = point.querySelector<HTMLButtonElement>(
         ".geography__point-icon"
@@ -26,16 +36,23 @@ export default function geography() {
           if (otherPoint !== point) otherPoint.classList.remove("active");
         });
 
+        const pointWasActive = point.classList.contains("active");
+
         point.classList.toggle("active");
         if (!point.hasAttribute("data-open-info")) return;
         const selector = point.getAttribute("data-open-info");
         if (!selector) return;
         const matchingPopover = document.querySelector<HTMLElement>(selector);
+
         if (matchingPopover) {
           popovers.forEach((otherPopover) => {
             if (otherPopover !== matchingPopover)
               otherPopover.classList.remove("active");
-            matchingPopover.classList.add("active");
+            if (pointWasActive) {
+              matchingPopover.classList.remove("active");
+            } else {
+              matchingPopover.classList.add("active");
+            }
           });
         } else {
           popovers.forEach((popover) => popover.classList.remove("active"));
@@ -50,8 +67,31 @@ export default function geography() {
         target.closest(".geography__point-item")
       )
         return;
-      points.forEach((point) => point.classList.remove("active"));
-      popovers.forEach((popover) => popover.classList.remove("active"));
+      const activePopover = popovers.find((popover) =>
+        popover.classList.contains("active")
+      );
+      if (activePopover) {
+        points.forEach((point) => point.classList.remove("active"));
+        activePopover.classList.remove("active");
+      } else {
+        points.forEach((point) => point.classList.remove("active"));
+      }
+    });
+
+    const mapWrapper = element.querySelector<HTMLElement>(
+      ".geography__map-wrapper"
+    );
+    if (!mapWrapper) return;
+
+    let mm = gsap.matchMedia();
+    mm.add("(max-width: 640px)", () => {
+      console.log("Map wrapper", mapWrapper);
+      Draggable.create(mapWrapper, {
+        type: "x",
+        bounds: mapWrapper.parentElement,
+        inertia: true,
+        allowContextMenu: true,
+      });
     });
   });
 }

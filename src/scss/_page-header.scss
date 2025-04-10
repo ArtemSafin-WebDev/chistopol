@@ -81,6 +81,8 @@
   text-align: center;
   position: relative;
   z-index: 1;
+  white-space: nowrap;
+  user-select: none;
 
   &:nth-child(1) {
     grid-column: 1 / 2;
@@ -104,6 +106,7 @@
   .page-header__toggle-btn:nth-child(1).active ~ & {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    background-color: #1ea141;
   }
   .page-header__toggle-btn:nth-child(2).active ~ & {
     grid-column: 2 / 3;
@@ -144,11 +147,19 @@
   border-radius: 2.5rem;
   background: #e6e3d6;
   color: var(--text-color);
+  transition: color 0.2s, background-color 0.2s;
   svg {
     flex-shrink: 0;
     fill: currentColor;
     width: 1.2rem;
     height: 1.2rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: #313131;
+      color: white;
+    }
   }
 }
 
@@ -174,10 +185,17 @@
   line-height: 100%;
   text-transform: uppercase;
   color: var(--biege);
+  transition: opacity 0.2s;
 
   &:link,
   &:visited {
     color: var(--biege);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.4;
+    }
   }
 }
 .page-header__buttons {
@@ -217,6 +235,23 @@
     width: 100%;
     height: 100%;
     fill: var(--biege);
+    transition: fill 0.2s;
+  }
+
+  transition: background-color 0.2s;
+  & > span {
+    width: 1.6rem;
+    height: 0.2rem;
+    background-color: var(--text-color);
+    transition: background-color 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        fill: #313131;
+      }
+    }
   }
 }
 
@@ -287,10 +322,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  transition: background-color 0.2s;
   & > span {
     width: 1.6rem;
     height: 0.2rem;
     background-color: var(--text-color);
+    transition: background-color 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: #313131;
+      & > span {
+        background-color: white;
+      }
+    }
   }
 }
 
