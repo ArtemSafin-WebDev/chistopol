@@ -24,5 +24,27 @@ export default function intro() {
         instance.destroy();
       };
     });
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top top",
+            end: "bottom top",
+            markers: false,
+            scrub: true,
+          },
+        });
+
+        tl.addLabel("parallaxStart");
+        tl.to(".intro__parallax", {
+          yPercent: 50,
+          duration: 1,
+          ease: "none",
+        });
+      },
+      element
+    );
   });
 }

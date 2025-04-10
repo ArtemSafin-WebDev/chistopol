@@ -10,9 +10,12 @@ import menu from "./menu";
 import smoothScrolling from "./smoothScrolling";
 import geography from "./geography";
 import toggleVersions from "./toggleVersions";
+import modals from "./modals";
+import forms from "./forms";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
+  modals();
   menu();
   toggleVersions();
   intro();
@@ -23,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   subjects();
   geography();
   toggleVersions();
+  forms();
 });
 
 window.addEventListener("load", () => {

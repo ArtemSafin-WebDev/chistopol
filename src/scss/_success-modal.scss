@@ -1,0 +1,128 @@
+@use "utils";
+@use "media";
+
+.success-modal {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  padding: var(--content-padding);
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+}
+
+.success-modal__inner {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  border-radius: 1rem;
+  background: white;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  padding: 6.45rem 4rem;
+  align-items: center;
+  color: var(--text-color);
+  text-align: center;
+  @include media.breakpoint(mobile) {
+    border-radius: 1rem;
+    max-width: none;
+    padding: 6.4rem 2rem;
+  }
+}
+
+.success-modal__close {
+  position: absolute;
+  width: 2.4rem;
+  height: 2.4rem;
+  right: 4rem;
+  top: 4rem;
+  @include media.breakpoint(mobile) {
+    right: 2rem;
+    top: 2rem;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--text-color);
+    transition: fill 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      svg {
+        fill: var(--primary-color);
+      }
+    }
+  }
+}
+
+.success-modal__icon {
+  width: 4.8rem;
+  height: 4.8rem;
+
+  margin-bottom: 2rem;
+
+  @include media.breakpoint(mobile) {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: black;
+  }
+}
+
+.success-modal__title {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.09rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  margin-bottom: 3.5rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.048rem;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+}
+
+.success-modal__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}

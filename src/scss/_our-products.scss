@@ -157,6 +157,10 @@
     overflow: visible;
   }
 
+  .swiper-wrapper {
+    transition-timing-function: linear !important;
+  }
+
   .swiper-slide {
     margin: 0 1rem;
     display: flex;
