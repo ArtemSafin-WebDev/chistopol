@@ -6,6 +6,8 @@
   margin-bottom: 8rem;
   background-color: #313131;
   color: var(--biege);
+  position: relative;
+  z-index: 20;
   @include media.breakpoint(mobile) {
     margin-bottom: 4rem;
   }

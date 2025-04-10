@@ -8,6 +8,34 @@ export default function subjects() {
     document.querySelectorAll<HTMLElement>(".subjects")
   );
   elements.forEach((element) => {
+    let mm = gsap.matchMedia();
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
+        tl.from(".subjects__heading", {
+          autoAlpha: 0,
+          duration: 0.7,
+          y: 30,
+        });
+        tl.from(
+          ".subjects__row",
+          {
+            autoAlpha: 0,
+            duration: 1.2,
+            y: 50,
+            ease: "power3.out",
+          },
+          ">-=0.3"
+        );
+      },
+      element
+    );
     const numbersItems = Array.from(
       element.querySelectorAll<HTMLElement>(".subjects__numbers-item")
     );

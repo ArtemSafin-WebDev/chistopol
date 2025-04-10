@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   career();
   partners();
   ourProducts();
-  subjects();
   geography();
+  subjects();
+
   toggleVersions();
   forms();
 });

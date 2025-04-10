@@ -85,12 +85,29 @@ export default function geography() {
 
     let mm = gsap.matchMedia();
     mm.add("(max-width: 640px)", () => {
-      console.log("Map wrapper", mapWrapper);
       Draggable.create(mapWrapper, {
         type: "x",
         bounds: mapWrapper.parentElement,
         inertia: true,
         allowContextMenu: true,
+      });
+    });
+    mm.add("(min-width: 641px)", () => {
+      const products = document.querySelector<HTMLElement>(".our-products");
+      if (!products) return;
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".our-products",
+          start: "bottom bottom",
+          scrub: true,
+          end: "bottom top+=30%",
+        },
+      });
+
+      tl.from(".geography", {
+        y: () => -1 * products.offsetHeight * 0.4,
+        duration: 1,
+        ease: "none",
       });
     });
   });
