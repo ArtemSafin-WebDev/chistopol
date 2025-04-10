@@ -8,6 +8,7 @@ import subjects from "./subjects";
 import intro from "./intro";
 import menu from "./menu";
 import smoothScrolling from "./smoothScrolling";
+import geography from "./geography";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   partners();
   ourProducts();
   subjects();
+  geography();
 });
 
 window.addEventListener("load", () => {
