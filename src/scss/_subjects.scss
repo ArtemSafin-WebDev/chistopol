@@ -5,8 +5,15 @@
   @include utils.blockWrapper;
   margin-bottom: 8rem;
 
+  &:has(+ .partners) {
+    margin-bottom: 16rem;
+  }
+
   @include media.breakpoint(mobile) {
     margin-bottom: 6rem;
+    &:has(+ .partners) {
+      margin-bottom: 10rem;
+    }
   }
 }
 

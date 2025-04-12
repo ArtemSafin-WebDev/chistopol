@@ -12,6 +12,8 @@ import geography from "./geography";
 import toggleVersions from "./toggleVersions";
 import modals from "./modals";
 import forms from "./forms";
+import ourTeam from "./ourTeam";
+import values from "./values";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -28,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleVersions();
   forms();
+  ourTeam();
+  values();
 });
 
 window.addEventListener("load", () => {

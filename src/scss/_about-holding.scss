@@ -1,0 +1,139 @@
+@use "utils";
+@use "media";
+
+.about-holding {
+  @include utils.blockWrapper;
+  margin-bottom: 8rem;
+  @include media.breakpoint(mobile) {
+    margin-bottom: 4rem;
+  }
+}
+
+.about-holding__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-holding__heading {
+  margin-bottom: 12rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  }
+}
+
+.about-holding__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2rem;
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.about-holding__left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-holding__secondary-heading {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  padding-right: 4rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.054rem;
+    text-transform: uppercase;
+    padding-right: 0;
+  }
+}
+
+.about-holding__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-bottom: 40rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+.about-holding__numbers-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2rem;
+  @include media.breakpoint(mobile) {
+    grid-gap: 0.8rem;
+  }
+}
+
+.about-holding__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include media.breakpoint(mobile) {
+    gap: 0.6rem;
+  }
+}
+
+.about-holding__card-amount {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.054rem;
+    text-transform: uppercase;
+  }
+}
+
+.about-holding__card-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+}
