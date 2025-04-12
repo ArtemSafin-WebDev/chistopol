@@ -81,6 +81,11 @@ export default function subjects() {
         event.preventDefault();
         accordions.forEach((accordion) => accordion.classList.remove("active"));
         accordion.classList.add("active");
+        numbersItems.forEach((item) => item.classList.remove("prev"));
+        const activeItem = numbersItems.find((item) =>
+          item.classList.contains("active")
+        );
+        activeItem?.classList.add("prev");
         numbersItems.forEach((item) => item.classList.remove("active"));
         numbersItems[accordionIndex]?.classList.add("active");
       });

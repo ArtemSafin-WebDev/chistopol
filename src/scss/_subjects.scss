@@ -69,12 +69,21 @@
     grid-template-columns: 44.5rem 1fr;
     grid-template-areas: "image numbers";
 
+    &.prev {
+      .subjects__numbers-item-image-container {
+        transform: translateY(-7rem);
+      }
+    }
+
     &.active {
       position: relative;
       z-index: 10;
       opacity: 1;
       visibility: inherit;
-      transition: opacity 0.4s, visibility 0.4s;
+      transition: opacity 0.6s, visibility 0.6s;
+      .subjects__numbers-item-image-container {
+        transform: translateY(0);
+      }
     }
   }
 
@@ -93,6 +102,11 @@
   border-radius: 0.5rem;
   overflow: hidden;
   margin-right: 0.7rem;
+
+  @include media.breakpointMF(small-tablet) {
+    transition: transform 0.6s;
+    transform: translateY(7rem);
+  }
   &::before {
     content: "";
     display: block;
