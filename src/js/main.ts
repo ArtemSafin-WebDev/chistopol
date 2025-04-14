@@ -17,6 +17,7 @@ import values from "./values";
 import aboutGallery from "./about-gallery";
 import aboutIntro from "./about-intro";
 import aboutHolding from "./about-holding";
+import mission from "./mission";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   values();
   aboutIntro();
   aboutHolding();
+  mission();
   aboutGallery();
 });
 

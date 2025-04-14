@@ -8,7 +8,6 @@ export default function aboutHolding() {
     document.querySelectorAll<HTMLElement>(".about-holding")
   );
   elements.forEach((element) => {
-    let mm = gsap.matchMedia();
     gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
