@@ -14,6 +14,9 @@ import modals from "./modals";
 import forms from "./forms";
 import ourTeam from "./ourTeam";
 import values from "./values";
+import aboutGallery from "./about-gallery";
+import aboutIntro from "./about-intro";
+import aboutHolding from "./about-holding";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -32,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
   forms();
   ourTeam();
   values();
+  aboutIntro();
+  aboutHolding();
+  aboutGallery();
 });
 
 window.addEventListener("load", () => {

@@ -8,6 +8,7 @@
   color: white;
   @include utils.blockWrapper;
   margin-bottom: 8rem;
+  overflow: hidden;
   @include media.breakpoint(mobile) {
     margin-bottom: 4rem;
   }
