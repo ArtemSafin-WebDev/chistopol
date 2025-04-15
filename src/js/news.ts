@@ -77,7 +77,6 @@ export default function news() {
           {
             autoAlpha: 0,
             duration: 0.7,
-            y: 30,
             delay: 0.3,
           },
           "beforeCards"

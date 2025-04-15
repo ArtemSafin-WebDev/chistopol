@@ -31,5 +31,27 @@ export default function aboutIntro() {
       },
       element
     );
+    mm.add(
+      "(max-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top top",
+            end: "bottom top",
+            markers: false,
+            scrub: true,
+          },
+        });
+
+        tl.addLabel("parallaxStart");
+        tl.to(".about-intro__bg", {
+          yPercent: 50,
+          duration: 1,
+          ease: "none",
+        });
+      },
+      element
+    );
   });
 }

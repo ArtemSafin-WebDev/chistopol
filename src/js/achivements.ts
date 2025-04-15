@@ -143,7 +143,6 @@ export default function achievements() {
           {
             autoAlpha: 0,
             duration: 0.7,
-            y: 30,
           },
           "countersStart"
         );

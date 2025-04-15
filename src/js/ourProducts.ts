@@ -19,6 +19,38 @@ export default function ourProducts() {
         longSwipesRatio: 0.2,
       });
 
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom-=20%",
+        },
+      });
+
+      tl.from(".our-products__heading", {
+        autoAlpha: 0,
+        duration: 0.7,
+        y: 30,
+      });
+      tl.addLabel("beforeCards");
+      tl.from(
+        ".our-products__slider-card",
+        {
+          autoAlpha: 0,
+          duration: 0.6,
+          stagger: 0.2,
+          y: 30,
+        },
+        ">-=0.3"
+      );
+      tl.from(
+        ".our-products__catalog",
+        {
+          autoAlpha: 0,
+          duration: 0.7,
+        },
+        "beforeCards"
+      );
+
       return () => swiperInstance.destroy();
     });
     mm.add("(min-width: 641px)", () => {

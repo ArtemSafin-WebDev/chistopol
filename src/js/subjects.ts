@@ -29,7 +29,6 @@ export default function subjects() {
             autoAlpha: 0,
             duration: 1.2,
             y: 50,
-            ease: "power3.out",
           },
           ">-=0.3"
         );
@@ -50,16 +49,11 @@ export default function subjects() {
           duration: 0.7,
           y: 30,
         });
-        tl.from(
-          ".subjects__row",
-          {
-            autoAlpha: 0,
-            duration: 1,
-            y: 30,
-            ease: "power3.out",
-          },
-          ">-=0.3"
-        );
+        tl.from(".subjects__row", {
+          autoAlpha: 0,
+          duration: 1.4,
+          y: 30,
+        });
       },
       element
     );
