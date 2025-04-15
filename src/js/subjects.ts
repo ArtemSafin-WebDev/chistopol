@@ -116,10 +116,7 @@ export default function subjects() {
         numbersItems.forEach((item) => item.classList.remove("active"));
         numbersItems[accordionIndex]?.classList.add("active");
         if (mql.matches) {
-          window.scrollTo({
-            top: window.scrollX + accordion.getBoundingClientRect().top,
-            behavior: "smooth",
-          });
+          accordion.scrollIntoView({ behavior: "smooth" });
         }
       });
 
