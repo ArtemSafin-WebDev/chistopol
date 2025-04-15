@@ -161,7 +161,9 @@
   }
 
   .swiper-wrapper {
-    transition-timing-function: linear !important;
+    @include media.breakpointMF(small-tablet) {
+      transition-timing-function: linear !important;
+    }
   }
 
   .swiper-slide {

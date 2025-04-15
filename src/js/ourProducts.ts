@@ -15,7 +15,7 @@ export default function ourProducts() {
     mm.add("(max-width: 640px)", () => {
       const swiperInstance = new Swiper(container, {
         slidesPerView: "auto",
-        speed: 600,
+        speed: 400,
         longSwipesRatio: 0.2,
       });
 
