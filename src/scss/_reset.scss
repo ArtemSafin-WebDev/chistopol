@@ -40,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   overscroll-behavior: none;
-  overflow-anchor: false;
+  overflow-anchor: none;
   font-family: var(--dewi);
 }
 
