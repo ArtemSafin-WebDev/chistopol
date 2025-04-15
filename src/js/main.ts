@@ -18,6 +18,7 @@ import aboutGallery from "./about-gallery";
 import aboutIntro from "./about-intro";
 import aboutHolding from "./about-holding";
 import mission from "./mission";
+import achievements from "./achivements";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ourProducts();
   geography();
   subjects();
-
+  achievements();
   toggleVersions();
   forms();
   ourTeam();

@@ -36,6 +36,33 @@ export default function subjects() {
       },
       element
     );
+    mm.add(
+      "(max-width: 640px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=30%",
+          },
+        });
+        tl.from(".subjects__heading", {
+          autoAlpha: 0,
+          duration: 0.7,
+          y: 30,
+        });
+        tl.from(
+          ".subjects__row",
+          {
+            autoAlpha: 0,
+            duration: 1,
+            y: 30,
+            ease: "power3.out",
+          },
+          ">-=0.3"
+        );
+      },
+      element
+    );
     const numbersItems = Array.from(
       element.querySelectorAll<HTMLElement>(".subjects__numbers-item")
     );
@@ -88,6 +115,12 @@ export default function subjects() {
         activeItem?.classList.add("prev");
         numbersItems.forEach((item) => item.classList.remove("active"));
         numbersItems[accordionIndex]?.classList.add("active");
+        if (mql.matches) {
+          window.scrollTo({
+            top: window.scrollX + accordion.getBoundingClientRect().top,
+            behavior: "smooth",
+          });
+        }
       });
 
       content?.addEventListener("transitionend", () => {
