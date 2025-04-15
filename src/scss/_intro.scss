@@ -65,7 +65,7 @@
   grid-template-columns: minmax(0, 1fr);
 
   @include media.breakpoint(mobile) {
-    min-height: min(100svh, 60rem);
+    min-height: min(100svh, 80rem);
   }
 }
 
