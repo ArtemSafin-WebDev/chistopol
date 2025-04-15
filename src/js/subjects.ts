@@ -115,9 +115,6 @@ export default function subjects() {
         activeItem?.classList.add("prev");
         numbersItems.forEach((item) => item.classList.remove("active"));
         numbersItems[accordionIndex]?.classList.add("active");
-        if (mql.matches) {
-          accordion.scrollIntoView({ behavior: "smooth" });
-        }
       });
 
       content?.addEventListener("transitionend", () => {
