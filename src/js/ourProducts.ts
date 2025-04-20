@@ -57,7 +57,7 @@ export default function ourProducts() {
       const swiperInstance = new Swiper(container, {
         modules: [Autoplay],
         slidesPerView: "auto",
-        speed: 3000,
+        speed: 5000,
         longSwipesRatio: 0.2,
         autoplay: {
           delay: 0,
