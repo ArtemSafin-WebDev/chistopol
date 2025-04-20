@@ -5,6 +5,12 @@
   @include utils.blockWrapper;
   margin-bottom: 8rem;
 
+  &--dark {
+    color: var(--biege);
+    background-color: var(--text-color);
+    margin-bottom: 0;
+  }
+
   @include media.breakpoint(mobile) {
     margin-bottom: 4rem;
   }
@@ -14,6 +20,13 @@
   @include utils.blockContent;
   display: flex;
   flex-direction: column;
+
+  .career--dark & {
+    color: var(--biege);
+    background-color: var(--text-color);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 .career__heading {
@@ -101,10 +114,26 @@
     color: var(--text-color);
   }
 
+  .career--dark & {
+    border-color: var(--biege);
+    color: var(--biege);
+    &:link,
+    &:visited {
+      color: var(--biege);
+    }
+  }
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       background-color: var(--text-color);
       color: white;
+    }
+
+    .career--dark & {
+      &:hover {
+        background-color: var(--biege);
+        color: var(--text-color);
+      }
     }
   }
 

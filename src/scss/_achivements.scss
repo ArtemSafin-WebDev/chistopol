@@ -5,8 +5,15 @@
   @include utils.blockWrapper;
   margin-bottom: 16rem;
 
+  &:has(+ .about-gallery) {
+    margin-bottom: 8rem;
+  }
+
   @include media.breakpoint(mobile) {
     margin-bottom: 8rem;
+    &:has(+ .about-gallery) {
+      margin-bottom: 8rem;
+    }
   }
 }
 

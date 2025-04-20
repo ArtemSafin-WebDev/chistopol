@@ -7,6 +7,23 @@
   top: 0;
   z-index: 30;
   width: 100%;
+  transition: --header-main-color 21s;
+
+  --header-main-color: var(--text-color);
+  --header-text-color: var(--biege);
+  --header-logo-color: var(--biege);
+
+  &--dark {
+    --header-main-color: var(--biege);
+    --header-text-color: var(--text-color);
+    --header-logo-color: var(--primary-color);
+    &:has(.page-header__search:hover) {
+      --header-main-color: var(--text-color);
+      --header-text-color: var(--biege);
+      --header-logo-color: var(--biege);
+    }
+  }
+
   @include utils.blockWrapper;
 }
 
@@ -49,9 +66,12 @@
 .page-header__logo-image {
   display: block;
   width: 6rem;
-  height: auto;
+  height: 6rem;
+  object-fit: contain;
+  fill: var(--header-logo-color);
   @include media.breakpoint(mobile) {
     width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -60,7 +80,7 @@
   grid-auto-flow: column;
   padding: 0.5rem;
   border-radius: 2rem;
-  background: var(--biege);
+  background: var(--header-text-color);
   flex-shrink: 0;
   position: relative;
   z-index: 20;
@@ -77,31 +97,44 @@
   font-weight: 600;
   line-height: 100%;
   text-transform: uppercase;
-  color: rgba(#313131, 0.3);
+  opacity: 0.3;
+  color: var(--header-main-color);
   text-align: center;
   position: relative;
   z-index: 1;
   white-space: nowrap;
   user-select: none;
 
+  .page-header--dark & {
+    opacity: 0.7;
+  }
+
   &:nth-child(1) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+
+    &.active {
+      color: var(--biege);
+    }
   }
 
   &:nth-child(2) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+
+    &.active {
+      color: var(--header-text-color);
+    }
   }
   &.active {
-    color: var(--biege);
+    opacity: 1;
   }
 }
 
 .page-header__toggle-marker {
   align-self: stretch;
   justify-self: stretch;
-  background-color: var(--text-color);
+  background-color: var(--header-main-color);
   border-radius: 8rem;
   .page-header__toggle-btn:nth-child(1).active ~ & {
     grid-column: 1 / 2;
@@ -145,9 +178,15 @@
   text-transform: uppercase;
   padding: 1.5rem;
   border-radius: 2.5rem;
-  background: #e6e3d6;
-  color: var(--text-color);
+  background: var(--header-text-color);
+  color: var(--header-main-color);
   transition: color 0.2s, background-color 0.2s;
+
+  &:link,
+  &:visited {
+    color: var(--header-main-color);
+  }
+
   svg {
     flex-shrink: 0;
     fill: currentColor;
@@ -157,8 +196,8 @@
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: #313131;
-      color: white;
+      background-color: var(--header-main-color);
+      color: var(--header-text-color);
     }
   }
 }
@@ -184,12 +223,12 @@
   font-weight: 600;
   line-height: 100%;
   text-transform: uppercase;
-  color: var(--biege);
+  color: var(--header-text-color);
   transition: opacity 0.2s;
 
   &:link,
   &:visited {
-    color: var(--biege);
+    color: var(--header-text-color);
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -234,7 +273,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    fill: var(--biege);
+    fill: var(--header-text-color);
     transition: fill 0.2s;
   }
 
@@ -242,7 +281,7 @@
   & > span {
     width: 1.6rem;
     height: 0.2rem;
-    background-color: var(--text-color);
+    background-color: var(--header-main-color);
     transition: background-color 0.2s;
   }
 
@@ -274,7 +313,7 @@
   top: 0;
   width: 100%;
   height: auto;
-  background-color: #313131;
+  background-color: var(--text-color);
   color: var(--biege);
   @include utils.blockWrapper;
   padding-top: 16rem;
@@ -301,11 +340,11 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background-color: var(--biege);
+  background-color: var(--header-text-color);
   position: relative;
   z-index: 20;
   svg {
-    fill: var(--text-color);
+    fill: var(--header-main-color);
     width: 1.6rem;
     height: 1.6rem;
   }
@@ -315,7 +354,7 @@
   flex-shrink: 0;
   width: 4rem;
   height: 4rem;
-  background-color: var(--biege);
+  background-color: var(--header-text-color);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -326,15 +365,15 @@
   & > span {
     width: 1.6rem;
     height: 0.2rem;
-    background-color: var(--text-color);
+    background-color: var(--header-main-color);
     transition: background-color 0.2s;
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: #313131;
+      background-color: var(--header-main-color);
       & > span {
-        background-color: white;
+        background-color: var(--header-text-color);
       }
     }
   }

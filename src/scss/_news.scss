@@ -152,6 +152,14 @@
   border-radius: 0.5rem;
   border: 1px solid rgba(230, 227, 214, 0.4);
   padding: 2rem;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .news__card-image {
+        transform: scale(1.02);
+      }
+    }
+  }
 }
 
 .news__card-top {
@@ -177,6 +185,9 @@
 
 .news__card-image-container {
   display: block;
+  border-radius: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
   margin-bottom: 2rem;
 }
 
@@ -185,7 +196,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 100%;
+  transition: transform 0.6s;
 }
 
 .news__card-title {

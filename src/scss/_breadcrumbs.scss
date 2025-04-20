@@ -1,0 +1,55 @@
+@use "utils";
+@use "media";
+
+.breadcrumbs {
+  white-space: nowrap;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: rgba(#313131, 0.4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+
+  a {
+    margin-right: 1rem;
+    @include media.breakpoint(mobile) {
+      margin-right: 0.8rem;
+    }
+    &::after {
+      content: "·";
+      color: rgba(#313131, 0.4);
+      margin-left: 1rem;
+      @include media.breakpoint(mobile) {
+        margin-left: 0.8rem;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+
+    &.active {
+      color: var(--text-color);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+}

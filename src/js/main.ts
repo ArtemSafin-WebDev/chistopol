@@ -19,6 +19,7 @@ import aboutIntro from "./about-intro";
 import aboutHolding from "./about-holding";
 import mission from "./mission";
 import achievements from "./achivements";
+import team from "./team";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -41,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   aboutHolding();
   mission();
   aboutGallery();
+  team();
 });
 
 window.addEventListener("load", () => {
