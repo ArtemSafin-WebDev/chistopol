@@ -20,10 +20,14 @@ import aboutHolding from "./about-holding";
 import mission from "./mission";
 import achievements from "./achivements";
 import team from "./team";
+import selects from "./selects";
+import vacancies from "./vacancies";
+import fileUpload from "./fileUpload";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   modals();
+  fileUpload();
   menu();
   toggleVersions();
   intro();
@@ -43,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
   mission();
   aboutGallery();
   team();
+  selects();
+  vacancies();
 });
 
 window.addEventListener("load", () => {

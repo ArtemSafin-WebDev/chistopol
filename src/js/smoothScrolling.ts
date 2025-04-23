@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
+import Lenis from "lenis";
 import { isTouch } from "./utils";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
@@ -16,6 +16,9 @@ export default function smoothScrolling() {
   if (!isTouch()) {
     lenis = new Lenis({
       smoothWheel: true,
+      prevent: (node) =>
+        node.classList.contains("vacancies__filters-modal") &&
+        window.matchMedia("(max-width: 640px)").matches,
     });
 
     // if (window.sessionStorage.getItem("loaderShown") !== "Y") {

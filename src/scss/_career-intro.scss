@@ -1,0 +1,59 @@
+@use "utils";
+@use "media";
+
+.career-intro {
+  @include utils.blockWrapper;
+  padding-top: 18rem;
+  margin-bottom: 15rem;
+
+  @include media.breakpoint(mobile) {
+    padding-top: 10rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.career-intro__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.career-intro__main-heading {
+  text-wrap: balance;
+  font-size: 9rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: -0.09rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  margin-top: 15rem;
+  max-width: 12rem;
+  @include media.breakpoint(mobile) {
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 110%; /* 2.75rem */
+    letter-spacing: -0.025rem;
+    text-transform: uppercase;
+    margin-top: 6rem;
+  }
+}
+
+.career-intro__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  font-family: var(--dewi-extended);
+  margin-top: 4rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+}
