@@ -23,6 +23,8 @@ import team from "./team";
 import selects from "./selects";
 import vacancies from "./vacancies";
 import fileUpload from "./fileUpload";
+import careerAdvantages from "./careerAdvantages";
+import successStories from "./successStories";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -49,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
   team();
   selects();
   vacancies();
+  careerAdvantages();
+  successStories();
 });
 
 window.addEventListener("load", () => {
