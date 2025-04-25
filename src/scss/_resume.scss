@@ -266,6 +266,8 @@
 .resume__form-file-wrapper {
   display: block;
   position: relative;
+  cursor: pointer;
+  user-select: none;
 }
 
 .resume__form-file-input {
@@ -275,6 +277,8 @@
   top: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  display: none;
 }
 
 .resume__form-file-content {
@@ -284,14 +288,14 @@
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 100%; /* 1.4rem */
+  line-height: 100%;
   text-transform: uppercase;
 
   @include media.breakpoint(mobile) {
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
-    line-height: 120%; /* 1.44rem */
+    line-height: 120%;
     text-transform: uppercase;
   }
 
