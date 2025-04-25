@@ -1,0 +1,142 @@
+@use "utils";
+@use "media";
+
+.requirements {
+  @include utils.blockWrapper;
+  margin-bottom: 8rem;
+  @include media.breakpoint(mobile) {
+    margin-bottom: 4rem;
+  }
+}
+
+.requirements__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.requiements__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2rem;
+  grid-template-areas: "left right";
+  @include media.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.requirements__left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.requirements__right {
+  grid-area: right;
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.requirements__heading {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  text-wrap: balance;
+  max-width: 60rem;
+  @include media.breakpoint(mobile) {
+    max-width: none;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.054rem;
+    text-transform: uppercase;
+  }
+}
+
+.requirements__image-wrapper {
+  width: 68rem;
+  max-width: 100%;
+  aspect-ratio: 678 / 297;
+  overflow: hidden;
+  border-radius: 100%;
+  position: relative;
+  margin-top: auto;
+  @include media.breakpoint(mobile) {
+    width: 100%;
+    order: 60;
+  }
+}
+
+.requirements__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.requirements__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.requirements__list-item {
+  border-top: 1px solid rgba(#b3b3b3, 0.5);
+}
+
+.requirements__card {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  padding-right: 2rem;
+  padding-left: 5rem;
+
+  @include media.breakpoint(mobile) {
+    padding: 2rem 0;
+    padding-left: 2.4rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    .requirements__list-item:last-child & {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.requirements__card-text {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    top: 1.4rem;
+    right: 100%;
+    margin-right: 1rem;
+    background-color: currentColor;
+    @include media.breakpoint(mobile) {
+      margin-right: 0.5rem;
+      top: 0.8rem;
+      margin-right: 1rem;
+    }
+  }
+}

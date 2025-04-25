@@ -1,0 +1,155 @@
+@use "utils";
+@use "media";
+
+.tenders {
+  @include utils.blockWrapper;
+  background-color: #e6e3d6;
+}
+
+.tenders__content {
+  @include utils.blockContent;
+  padding: 8rem 0;
+  display: flex;
+  flex-direction: column;
+  @include media.breakpoint(mobile) {
+    padding: 4rem 0;
+  }
+}
+
+.tenders__heading {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 14rem;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  }
+}
+
+.tenders__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tenders__list-item {
+  border-top: 1px solid #b3b3b3;
+}
+
+.tenders__card {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2rem;
+  @include media.breakpoint(mobile) {
+    padding: 4rem 0;
+    grid-template-columns: 1fr auto;
+    grid-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-areas: "title arrow" "text text" "info info";
+  }
+}
+
+.tenders__card-title {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.072rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  text-wrap: balance;
+  max-width: 70rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.042rem;
+    text-transform: uppercase;
+    grid-area: title;
+    margin: 0;
+  }
+}
+
+.tenders__card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 7rem;
+  justify-content: space-between;
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.tenders__card-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+
+.tenders__card-desc {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  @include media.breakpoint(mobile) {
+    grid-area: text;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin: 0;
+  }
+}
+
+.tenders__card-info {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  opacity: 0.5;
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+    grid-area: info;
+    margin: 0;
+  }
+}
+
+.tenders__card-arrow {
+  flex-shrink: 0;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  background-color: #313131;
+  margin-left: auto;
+  @include media.breakpoint(mobile) {
+    margin: 0;
+    align-self: flex-start;
+    justify-self: flex-end;
+    width: 4rem;
+    height: 4rem;
+    grid-area: arrow;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: white;
+  }
+}
