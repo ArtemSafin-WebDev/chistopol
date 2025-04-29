@@ -13,7 +13,7 @@
   transition: opacity 0.4s, visibility 0s linear 0.4s;
   background: rgba(0, 0, 0, 0.6);
 
-  body:has(.page-header__search:hover) & {
+  body.search-shown & {
     opacity: 1;
     visibility: inherit;
     transition: opacity 0.4s, visibility 0.4s;

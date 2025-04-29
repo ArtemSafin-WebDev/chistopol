@@ -55,9 +55,12 @@
 .menu__logo-image {
   display: block;
   width: 6rem;
+  height: 6rem;
+  fill: var(--biege);
   height: auto;
   @include media.breakpoint(mobile) {
     width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -68,42 +71,85 @@
 }
 
 .menu__search {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
   width: 4rem;
   height: 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+  transition: background-color 0.2s, color 0.2s;
   border-radius: 50%;
-  background-color: var(--biege);
-
+  color: var(--text-color);
+  position: relative;
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    border: 1px solid var(--biege);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
   svg {
-    fill: var(--text-color);
-    width: 1.6rem;
-    height: 1.6rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--biege);
+
+    transition: fill 0.2s, opacity 0.2s;
+    grid-area: stack;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--biege);
+      svg {
+        fill: var(--text-color);
+      }
+    }
   }
 }
 
 .menu__close {
-  flex-shrink: 0;
   width: 4rem;
   height: 4rem;
-  background-color: var(--biege);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+  transition: background-color 0.2s, color 0.2s;
   border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  & > span {
-    width: 1.6rem;
-    height: 0.2rem;
-    background-color: var(--text-color);
-    &:nth-child(1) {
-      transform: translateY(0.36rem) rotate(45deg);
-    }
+  color: var(--text-color);
+  position: relative;
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    border: 1px solid var(--biege);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--biege);
 
-    &:nth-child(2) {
-      transform: translateY(-0.36rem) rotate(-45deg);
+    transition: fill 0.2s, opacity 0.2s;
+    grid-area: stack;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--biege);
+      svg {
+        fill: var(--text-color);
+      }
     }
   }
 }
@@ -151,8 +197,10 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  align-items: flex-start;
   @include media.breakpoint(mobile) {
     gap: 1.8rem;
+    align-items: stretch;
   }
 }
 
@@ -166,6 +214,13 @@
   letter-spacing: -0.09rem;
   text-transform: uppercase;
   font-family: var(--dewi-expanded);
+  transition: opacity 0.2s, color 0.2s;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.4;
+    }
+  }
   @include media.breakpoint(mobile) {
     font-size: 1.6rem;
     font-style: normal;
@@ -200,9 +255,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
+  align-items: flex-start;
   @include media.breakpoint(mobile) {
     grid-column: 1 / -1;
     gap: 1rem;
+    align-items: stretch;
   }
 }
 
@@ -213,6 +270,13 @@
   font-weight: 400;
   line-height: 120%;
   text-transform: uppercase;
+  transition: opacity 0.2s, color 0.2s;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.4;
+    }
+  }
   @include media.breakpoint(mobile) {
     font-size: 1.2rem;
     font-style: normal;
@@ -251,6 +315,13 @@
   letter-spacing: -0.072rem;
   text-transform: uppercase;
   font-family: var(--dewi-expanded);
+  transition: opacity 0.2s, color 0.2s;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 0.4;
+    }
+  }
   @include media.breakpoint(mobile) {
     font-size: 1.4rem;
     font-style: normal;
@@ -274,11 +345,36 @@
   display: block;
   width: 4rem;
   height: 4rem;
+  position: relative;
+  transition: background-color 0.2s, color 0.2s;
+  color: transparent;
+  &:link,
+  &:visited {
+    color: transparent;
+  }
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    border: 1px solid var(--biege);
+    pointer-events: none;
+    border-radius: 50%;
+  }
 
   svg {
     display: block;
     width: 100%;
     height: 100%;
     fill: var(--biege);
+    transition: fill 0.2s;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--biege);
+      svg {
+        fill: transparent;
+      }
+    }
   }
 }

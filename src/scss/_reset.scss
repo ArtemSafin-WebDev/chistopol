@@ -27,9 +27,13 @@ html {
   font-size: clamp(2px, 0.52vw, 125px);
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
-  scroll-padding-top: 10rem;
+  scroll-padding-top: 0;
   @include media.breakpoint(mobile) {
     font-size: 62.5%;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 54%;
   }
 }
 

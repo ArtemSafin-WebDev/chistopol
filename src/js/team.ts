@@ -4,8 +4,38 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function team() {
-  const elements = Array.from(document.querySelectorAll<HTMLElement>(".team"));
+  const elements = Array.from(
+    document.querySelectorAll<HTMLElement>(".team__tabs")
+  );
   elements.forEach((element) => {
+    let mm = gsap.matchMedia();
+    mm.add(
+      "(min-width: 641px)",
+      () => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: element,
+            start: "top bottom-=10%",
+          },
+        });
+        tl.from(".team__tabs-nav", {
+          autoAlpha: 0,
+          duration: 0.7,
+          y: 30,
+        });
+        tl.from(
+          ".team__list-item",
+          {
+            autoAlpha: 0,
+            duration: 0.7,
+            stagger: 0.2,
+            y: 30,
+          },
+          ">-=0.3"
+        );
+      },
+      element
+    );
     const btns = Array.from(
       element.querySelectorAll<HTMLButtonElement>(".team__tabs-nav-btn")
     );

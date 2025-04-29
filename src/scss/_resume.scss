@@ -184,22 +184,42 @@
 }
 
 .resume__card-social-link {
-  display: block;
   width: 4rem;
   height: 4rem;
-
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "stack";
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 50%;
+  color: transparent;
+  position: relative;
+  &::after {
+    content: "";
+    inset: 0;
+    position: absolute;
+    border: 1px solid var(--biege);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+  &:link,
+  &:visited {
+    color: transparent;
+  }
   svg {
     display: block;
     width: 100%;
     height: 100%;
     fill: var(--biege);
-    transition: fill 0.2s;
+
+    transition: fill 0.2s, opacity 0.2s;
+    grid-area: stack;
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
+      color: var(--biege);
       svg {
-        fill: var(--text-color);
+        fill: transparent;
       }
     }
   }
@@ -417,11 +437,11 @@
   background-color: var(--biege);
   color: var(--text-color);
   border-radius: 50rem;
-  transition: background-color 0.2s, color 0.2s;
-
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  border: 1px solid var(--biege);
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: var(--text-color);
+      background-color: transparent;
       color: var(--biege);
     }
   }

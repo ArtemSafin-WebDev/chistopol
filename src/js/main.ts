@@ -25,12 +25,14 @@ import vacancies from "./vacancies";
 import fileUpload from "./fileUpload";
 import careerAdvantages from "./careerAdvantages";
 import successStories from "./successStories";
+import search from "./search";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   modals();
   fileUpload();
   menu();
+  search();
   toggleVersions();
   intro();
   news();

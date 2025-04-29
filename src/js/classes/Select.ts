@@ -8,6 +8,7 @@ class Select {
   private multiSelect = false;
   private form: HTMLFormElement | null = null;
   private handler: null | (() => void) = null;
+  private initallyChecked: HTMLInputElement[] = [];
   constructor(private element: HTMLElement) {
     this.element = element;
     this.btn = this.element.querySelector<HTMLButtonElement>(
@@ -25,6 +26,8 @@ class Select {
         'input[type="radio"], input[type="checkbox"]'
       )
     );
+
+    this.initallyChecked = this.choices.filter((input) => input.checked);
 
     if (this.choices.find((choice) => choice.matches('input[type="checkbox"]')))
       this.multiSelect = true;
@@ -171,6 +174,12 @@ class Select {
     if (this.btnTextElement) {
       this.btnTextElement.textContent = this.placeholderText;
     }
+
+    if (this.initallyChecked.length) {
+      this.initallyChecked.forEach((input) => (input.checked = true));
+      this.update();
+    }
+
     this.close();
   };
 
