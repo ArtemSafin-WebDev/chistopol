@@ -33,7 +33,7 @@ export default function news() {
           ">-=0.3"
         );
         tl.from(
-          ".news__card",
+          ".news__card, .news-catalog__card",
           {
             autoAlpha: 0,
             duration: 0.7,
@@ -62,7 +62,7 @@ export default function news() {
         tl.addLabel("beforeCards");
 
         tl.from(
-          ".news__card",
+          ".news__card, .news-catalog__card",
           {
             autoAlpha: 0,
             duration: 0.7,

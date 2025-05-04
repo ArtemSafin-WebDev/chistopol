@@ -3,7 +3,7 @@
     "target": "es2022",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["es2022", "dom", "dom.iterable"],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -18,7 +18,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "allowJs": true
+    "allowJs": true,
+    "esModuleInterop": true,
+    "paths": {
+      "ymaps3": ["./node_modules/@yandex/ymaps3-types"]
+    }
   },
   "include": ["src"]
 }

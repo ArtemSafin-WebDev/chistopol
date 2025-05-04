@@ -6,6 +6,15 @@
   margin-bottom: 8rem;
   background-color: var(--text-color);
   color: var(--biege);
+
+  &--other {
+    background-color: transparent;
+    color: var(--text-color);
+    margin-bottom: 20rem;
+    @include media.breakpoint(mobile) {
+      margin-bottom: 8rem;
+    }
+  }
 }
 
 .news__content {
@@ -15,8 +24,15 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
 
+  .news--other & {
+    padding: 0;
+  }
+
   @include media.breakpoint(mobile) {
     padding: 4rem 0;
+    .news--other & {
+      padding: 0;
+    }
   }
 }
 
@@ -109,6 +125,22 @@
     &:hover {
       background-color: var(--biege);
       color: var(--text-color);
+    }
+  }
+
+  .news--other & {
+    border-color: var(--text-color);
+    color: var(--text-color);
+    &:link,
+    &:visited {
+      color: var(--text-color);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--text-color);
+        color: var(--biege);
+      }
     }
   }
 

@@ -26,6 +26,8 @@ import fileUpload from "./fileUpload";
 import careerAdvantages from "./careerAdvantages";
 import successStories from "./successStories";
 import search from "./search";
+import fancybox from "./fancybox";
+import contacts from "./contacts";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -55,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
   vacancies();
   careerAdvantages();
   successStories();
+  fancybox();
+  contacts();
 });
 
 window.addEventListener("load", () => {

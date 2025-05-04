@@ -10,8 +10,6 @@
     background-color: var(--text-color);
     margin-bottom: 0;
   }
-  &--brown {
-  }
 
   @include media.breakpoint(mobile) {
     margin-bottom: 4rem;

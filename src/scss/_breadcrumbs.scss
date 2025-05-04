@@ -9,14 +9,23 @@
   line-height: 100%;
   text-transform: uppercase;
   color: rgba(#313131, 0.4);
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+  @include media.breakpointMF(small-tablet) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   @include media.breakpoint(mobile) {
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
     text-transform: uppercase;
+    overflow-y: hidden;
+    text-overflow: revert;
+    @include utils.noScrollbar;
+    margin: 0 calc(-1 * var(--content-padding));
+    padding: 0 var(--content-padding);
   }
 
   a {
@@ -49,6 +58,25 @@
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: var(--text-color);
+      }
+    }
+  }
+
+  &--light {
+    color: rgba(#e6e3d6, 0.4);
+
+    a {
+      &::after {
+        color: rgba(#e6e3d6, 0.4);
+      }
+      &.active {
+        color: #e6e3d6;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: #e6e3d6;
+        }
       }
     }
   }

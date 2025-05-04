@@ -17,7 +17,10 @@
     --header-main-color: var(--biege);
     --header-text-color: var(--text-color);
     --header-logo-color: var(--primary-color);
-    &:has(.page-header__search:hover) {
+  }
+
+  .search-shown & {
+    &--dark {
       --header-main-color: var(--text-color);
       --header-text-color: var(--biege);
       --header-logo-color: var(--biege);
@@ -97,7 +100,7 @@
   font-weight: 600;
   line-height: 100%;
   text-transform: uppercase;
-  opacity: 0.3;
+  opacity: 0.7;
   color: var(--header-main-color);
   text-align: center;
   position: relative;
