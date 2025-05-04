@@ -1,5 +1,226 @@
 <section class="news-catalog">
     <div class="news-catalog__content">
+        <div class="news-catalog__filters">
+            <div class="news-catalog__categories">
+                <ul class="news-catalog__categories-list">
+                    <li class="news-catalog__categories-list-item">
+                        <a href="#" class="news-catalog__categories-link active">
+                            все
+                        </a>
+                    </li>
+                    <li class="news-catalog__categories-list-item">
+                        <a href="#" class="news-catalog__categories-link">
+                            новости
+                        </a>
+                    </li>
+                    <li class="news-catalog__categories-list-item">
+                        <a href="#" class="news-catalog__categories-link">
+                            интервью
+                        </a>
+                    </li>
+                    <li class="news-catalog__categories-list-item">
+                        <a href="#" class="news-catalog__categories-link">
+                            партнерам
+                        </a>
+                    </li>
+                    <li class="news-catalog__categories-list-item">
+                        <a href="#" class="news-catalog__categories-link">
+                            сотрудникам
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form action="#" class="news-catalog__filters-form">
+                <a href="#news-catalog-filters-modal" class="news-catalog__filters-btn" type="button">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#filters"></use>
+                    </svg>
+                </a>
+                <div class="news-catalog__filters-modal js-modal" id="news-catalog-filters-modal">
+                    <div class="news-catalog__filters-modal-inner">
+                        <div class="news-catalog__filters-modal-drag-wrapper">
+                            <div class="news-catalog__filters-modal-draggable-area">
+
+                            </div>
+
+                            <div class="news-catalog__filters-top-row">
+                                <h3 class="news-catalog__filters-title">
+                                    Фильтры
+                                </h3>
+                                <button class="news-catalog__filters-close js-modal-close" type="button">
+                                    <svg width="14" height="14" aria-hidden="true">
+                                        <use xlink:href="#close"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="news-catalog__selects">
+                                <div class="news-catalog__select js-select" data-placeholder="месяц">
+                                    <button class="news-catalog__select-accordion-btn js-select-accordion-btn"
+                                        type="button">
+                                        <span class="news-catalog__select-accordion-btn-text">
+                                            месяц
+                                        </span>
+                                        <span class="news-catalog__select-accordion-btn-icon">
+
+                                        </span>
+                                    </button>
+                                    <button class="news-catalog__select-btn" type="button">
+                                        <span class="news-catalog__select-btn-text js-btn-text">
+
+                                        </span>
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#select-arrow"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="news-catalog__select-dropdown">
+                                        <div class="news-catalog__select-dropdown-inner">
+                                            <ul class="news-catalog__select-list">
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="month" value="январь"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            Январь
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="month" value="февраль"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            Февраль
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="month" value="Март"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            Март
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="month" value="Март"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            Апрель
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-catalog__select js-select" data-placeholder="год">
+                                    <button class="news-catalog__select-accordion-btn js-select-accordion-btn"
+                                        type="button">
+                                        <span class="news-catalog__select-accordion-btn-text">
+                                            год
+                                        </span>
+                                        <span class="news-catalog__select-accordion-btn-icon">
+
+                                        </span>
+                                    </button>
+                                    <button class="news-catalog__select-btn" type="button">
+                                        <span class="news-catalog__select-btn-text js-btn-text">
+
+                                        </span>
+                                        <svg width="14" height="14" aria-hidden="true">
+                                            <use xlink:href="#select-arrow"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="news-catalog__select-dropdown">
+                                        <div class="news-catalog__select-dropdown-inner">
+                                            <ul class="news-catalog__select-list">
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="year" value="2023"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            2023
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="year" value="2024"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            2024
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                                <li class="news-catalog__select-list-item">
+                                                    <label class="news-catalog__select-radio">
+                                                        <input type="radio" name="year" value="2025"
+                                                            class="news-catalog__select-radio-input">
+                                                        <span class="news-catalog__select-radio-mark">
+                                                            <svg width="14" height="14" aria-hidden="true">
+                                                                <use xlink:href="#checkmark"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="news-catalog__select-radio-text">
+                                                            2025
+                                                        </span>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="news-catalog__apply-btn js-modal-close" type="button">
+                                применить
+                            </button>
+                            <button class="news-catalog__reset-btn" type="reset">
+                                сбросить фильтры
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#reset"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-catalog__filters-search">
+                    <input type="search" class="news-catalog__filters-search-input" name="q"
+                        placeholder="поиск по названию">
+                </div>
+            </form>
+        </div>
         <div class="news-catalog__results">
             <ul class="news-catalog__list">
                 <li class="news-catalog__list-item">

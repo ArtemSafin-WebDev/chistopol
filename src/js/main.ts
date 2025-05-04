@@ -28,6 +28,7 @@ import successStories from "./successStories";
 import search from "./search";
 import fancybox from "./fancybox";
 import contacts from "./contacts";
+import newsCatalog from "./newsCatalog";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   successStories();
   fancybox();
   contacts();
+  newsCatalog();
 });
 
 window.addEventListener("load", () => {
