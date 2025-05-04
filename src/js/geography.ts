@@ -1,6 +1,5 @@
 import gsap from "gsap";
-import { ScrollTrigger, Draggable, Flip } from "gsap/all";
-import { InertiaPlugin } from "./gsap/InertiaPlugin.js";
+import { ScrollTrigger, Draggable, Flip, InertiaPlugin } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin, Flip);
 

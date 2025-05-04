@@ -1,4 +1,4 @@
-import type { YMapLocationRequest, Margin } from "ymaps3";
+import type { YMapLocationRequest } from "ymaps3";
 import customization from "./customization";
 
 async function initMap(): Promise<void> {
