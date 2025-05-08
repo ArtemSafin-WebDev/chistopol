@@ -29,6 +29,7 @@ import search from "./search";
 import fancybox from "./fancybox";
 import contacts from "./contacts";
 import newsCatalog from "./newsCatalog";
+import subjectsCategories from "./subjectsCategories";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fancybox();
   contacts();
   newsCatalog();
+  subjectsCategories();
 });
 
 window.addEventListener("load", () => {

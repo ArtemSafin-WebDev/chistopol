@@ -8,6 +8,7 @@ import newsDetail from "./pages-data/newsDetail";
 import newsDetail2 from "./pages-data/newsDetail2";
 import contacts from "./pages-data/contacts";
 import notFound from "./pages-data/notFound";
+import subjects from "./pages-data/subjects";
 
 const pagesConfig = {
   ...home,
@@ -20,6 +21,7 @@ const pagesConfig = {
   ...newsDetail2,
   ...contacts,
   ...notFound,
+  ...subjects,
 };
 
 export default pagesConfig;
