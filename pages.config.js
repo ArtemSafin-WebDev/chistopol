@@ -10,6 +10,7 @@ import contacts from "./pages-data/contacts";
 import notFound from "./pages-data/notFound";
 import subjects from "./pages-data/subjects";
 import subject from "./pages-data/subject";
+import catalog from "./pages-data/catalog";
 
 const pagesConfig = {
   ...home,
@@ -24,6 +25,7 @@ const pagesConfig = {
   ...notFound,
   ...subjects,
   ...subject,
+  ...catalog,
 };
 
 export default pagesConfig;

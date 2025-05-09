@@ -1,0 +1,114 @@
+@use "utils";
+@use "media";
+
+.catalog {
+  @include utils.blockWrapper;
+  padding-top: 18rem;
+  margin-bottom: 8rem;
+
+  @include media.breakpoint(mobile) {
+    padding-top: 10rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.catalog__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__heading {
+  font-size: 9rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 110%;
+  letter-spacing: -0.09rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  margin-top: 14rem;
+}
+
+.catalog__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  font-family: var(--dewi-extended);
+  margin-top: 3.5rem;
+}
+
+.catalog__list {
+  margin-top: 22rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 2rem;
+  grid-auto-rows: 1fr;
+}
+
+.catalog__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  flex-grow: 1;
+  padding: 4rem;
+  border-radius: 0.5rem;
+  border: 1px solid #b3b3b3;
+  gap: 2rem;
+  min-height: 56rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &:hover {
+    .catalog__card-image {
+      clip-path: circle(100% at center 60%);
+    }
+  }
+}
+
+.catalog__card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.06rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.catalog__card-image-container {
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  //   overflow: hidden;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  align-self: flex-end;
+  //   background-color: red;
+
+  //   display: grid;
+  //   grid-template-columns: subgrid;
+  //   grid-template-rows: subgrid;
+  //   position: relative;
+}
+
+.catalog__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+
+  clip-path: circle(calc(36.5rem / 2) at center calc(100% - 22.2rem));
+  transition: clip-path 0.4s;
+}
