@@ -12,6 +12,23 @@
   flex-direction: column;
 }
 
+.subjects-categories__heading {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 12rem;
+  @include media.breakpoint(mobile) {
+    margin-bottom: 5rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
 .subjects-categories__list-item {
   border-top: 1px solid #b3b3b3;
 

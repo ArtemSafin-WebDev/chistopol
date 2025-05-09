@@ -43,6 +43,24 @@
   }
 }
 
+.our-products__secondary-heading {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-right: auto;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
 .our-products__row {
   display: flex;
   align-items: center;

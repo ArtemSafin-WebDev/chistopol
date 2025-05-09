@@ -1,0 +1,197 @@
+@use "utils";
+@use "media";
+
+.subject-numbers {
+  @include utils.blockWrapper;
+  margin-bottom: 16rem;
+
+  @include media.breakpoint(mobile) {
+    margin-bottom: 8rem;
+  }
+}
+
+.subject-numbers__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.subject-numbers__heading {
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 12rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+  }
+}
+
+.subject-numbers__learn-more {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  @include media.breakpoint(mobile) {
+    order: 10;
+    margin: 0;
+    margin-top: 6rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    align-self: stretch;
+  }
+}
+
+.subject-numbers__learn-more-text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
+.subject-numbers__learn-more-arrow {
+  flex-shrink: 0;
+  @include media.breakpoint(mobile) {
+    transform: rotate(90deg);
+  }
+}
+
+.subject-numbers__learn-more-btn {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 3.8rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.014rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  transition: color 0.2s, background-color 0.2s;
+  border-radius: 4.5rem;
+  border: 0.2rem solid var(--text-color);
+  color: var(--text-color);
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--text-color);
+      color: white;
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.014rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+  }
+}
+
+.subject-numbers__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  grid-auto-rows: 1fr;
+
+  @include media.breakpoint(mobile) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    border: 1px solid #b3b3b3;
+    pointer-events: none;
+    inset: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+}
+
+.subject-numbers__list-item {
+  border: 1px solid #b3b3b3;
+  border-top: none;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subject-numbers__card {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 40rem;
+  padding: 4rem;
+  gap: 3rem;
+  justify-content: space-between;
+
+  @include media.breakpoint(mobile) {
+    padding: 2rem;
+    min-height: 15rem;
+  }
+}
+
+.subject-numbers__card-amount {
+  font-size: 7rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.07rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  @include media.breakpoint(mobile) {
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 110%;
+    letter-spacing: -0.025rem;
+    text-transform: uppercase;
+  }
+}
+
+.subject-numbers__card-text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+}

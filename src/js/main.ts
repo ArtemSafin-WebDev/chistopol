@@ -30,6 +30,9 @@ import fancybox from "./fancybox";
 import contacts from "./contacts";
 import newsCatalog from "./newsCatalog";
 import subjectsCategories from "./subjectsCategories";
+import subjectIntro from "./subjectIntro";
+import subjectNumbers from "./subjectNumbers";
+import subjectDesc from "./subjectDesc";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -63,6 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
   contacts();
   newsCatalog();
   subjectsCategories();
+  subjectIntro();
+  subjectNumbers();
+  subjectDesc();
 });
 
 window.addEventListener("load", () => {

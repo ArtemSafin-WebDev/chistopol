@@ -3,6 +3,7 @@
 @use "reset";
 @use "page-footer";
 @use "breadcrumbs";
+@use "rich-text";
 @use "news";
 @use "career";
 @use "partners";
@@ -44,3 +45,6 @@
 @use "not-found";
 @use "subjects-categories";
 @use "subjects-intro";
+@use "subject-intro";
+@use "subject-desc";
+@use "subject-numbers";
