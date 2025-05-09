@@ -33,7 +33,7 @@ export default function ourProducts() {
       });
       tl.addLabel("beforeCards");
       tl.from(
-        ".our-products__slider-card",
+        ".product-card",
         {
           autoAlpha: 0,
           duration: 0.6,

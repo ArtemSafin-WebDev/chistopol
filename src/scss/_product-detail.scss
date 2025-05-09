@@ -1,0 +1,222 @@
+@use "utils";
+@use "media";
+
+.product-detail {
+  @include utils.blockWrapper;
+  padding-top: 18rem;
+  padding-bottom: 8rem;
+  background: var(--biege);
+  color: var(--text-color);
+
+  @include media.breakpoint(mobile) {
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.product-detail__content {
+  @include utils.blockContent;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail__row {
+  margin-top: 15rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 2rem;
+  @include media.breakpoint(mobile) {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.product-detail__left-col {
+  padding-right: 2rem;
+  @include media.breakpoint(mobile) {
+    padding-right: 0;
+  }
+}
+.product-detail__image-wrapper {
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.product-detail__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-detail__text-content {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail__heading {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%;
+  letter-spacing: -0.12rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  @include media.breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -0.054rem;
+    text-transform: uppercase;
+  }
+}
+
+.product-detail__desc {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  margin-top: 3rem;
+  @include media.breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-top: 1.5rem;
+  }
+}
+
+.product-detail__specs {
+  margin-top: 3rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #b3b3b3;
+}
+
+.product-detail__specs-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail__specs-list-item {
+  border-bottom: 1px solid #b3b3b3;
+  &:last-child {
+    border: none;
+  }
+}
+
+.product-detail__specs-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  text-transform: uppercase;
+  justify-content: space-between;
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+}
+
+.product-detail__specs-card-key {
+  white-space: nowrap;
+}
+.product-detail__specs-card-value {
+  text-align: right;
+}
+
+.product-detail__contact-us {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  @include media.breakpoint(mobile) {
+    order: 10;
+    margin: 0;
+    margin-top: 6rem;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    align-self: stretch;
+  }
+}
+
+.product-detail__contact-us-link {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 3.8rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 120%;
+  letter-spacing: -0.014rem;
+  text-transform: uppercase;
+  font-family: var(--dewi-expanded);
+  transition: color 0.2s, background-color 0.2s;
+  border-radius: 4.5rem;
+  border: 0.2rem solid var(--text-color);
+  color: var(--text-color);
+  &:link,
+  &:visited {
+    color: var(--text-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--text-color);
+      color: var(--biege);
+    }
+  }
+
+  @include media.breakpoint(mobile) {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    letter-spacing: -0.014rem;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    order: 30;
+  }
+}
+
+.product-detail__contact-us-text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  @include media.breakpoint(mobile) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
+
+.product-detail__contact-us-arrow {
+  flex-shrink: 0;
+  transform: rotate(180deg);
+  @include media.breakpoint(mobile) {
+    transform: rotate(90deg);
+    order: 10;
+  }
+}

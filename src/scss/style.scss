@@ -10,6 +10,7 @@
 @use "callback-modal";
 @use "achivements";
 @use "our-products";
+@use "product-card";
 @use "subjects";
 @use "intro";
 @use "page-header";
@@ -49,3 +50,5 @@
 @use "subject-desc";
 @use "subject-numbers";
 @use "catalog";
+@use "category";
+@use "product-detail";
