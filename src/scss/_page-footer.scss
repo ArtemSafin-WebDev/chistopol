@@ -3,6 +3,22 @@
 
 .page-footer {
   @include utils.blockWrapper;
+  position: relative;
+}
+.page-footer__illustration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.4s;
+
+  body.decorated & {
+    opacity: 1;
+  }
 }
 
 .page-footer__content {

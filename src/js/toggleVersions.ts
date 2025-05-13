@@ -3,12 +3,14 @@ import { Flip } from "gsap/all";
 
 gsap.registerPlugin(Flip);
 
+type Version = "clear" | "decorated";
+
 export default function toggleVersions() {
   const btns = Array.from(
     document.querySelectorAll<HTMLButtonElement>(".page-header__toggle-btn")
   );
 
-  let version: "clear" | "decored" = "clear";
+  let version: Version = "clear";
   btns.forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
@@ -21,10 +23,14 @@ export default function toggleVersions() {
       );
       if (version === "clear") {
         btns[1].classList.remove("active");
-        version = "decored";
+        version = "decorated";
+        document.body.classList.add("decorated");
+        window.localStorage.setItem("page_version", "decorated");
       } else {
         btns[0].classList.remove("active");
         version = "clear";
+        document.body.classList.remove("decorated");
+        window.localStorage.setItem("page_version", "clear");
       }
       btn.classList.add("active");
 
@@ -34,4 +40,12 @@ export default function toggleVersions() {
       });
     });
   });
+
+  const versionPreference = window.localStorage.getItem(
+    "page_version"
+  ) as Version | null;
+
+  if (versionPreference && versionPreference === "decorated") {
+    btns[0]?.click();
+  }
 }
