@@ -186,9 +186,33 @@
   gap: 3rem;
   justify-content: space-between;
   flex-grow: 1;
+  position: relative;
+  isolation: isolate;
+
+  picture,
+  source {
+    display: contents;
+  }
 
   @include media.breakpoint(mobile) {
     padding: 2rem;
+  }
+}
+
+.achievements__card-illustration {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: -1;
+
+  body.decorated & {
+    opacity: 1;
   }
 }
 

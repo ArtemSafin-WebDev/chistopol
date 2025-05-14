@@ -47,6 +47,28 @@
 .about-holding__left-col {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.about-holding__illustration {
+  position: absolute;
+  bottom: -8rem;
+  right: 5.5rem;
+  max-width: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  width: 93.6rem;
+  height: auto;
+  z-index: -1;
+
+  body.decorated & {
+    opacity: 1;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
 }
 
 .about-holding__secondary-heading {

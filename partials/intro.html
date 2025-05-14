@@ -2,7 +2,15 @@
     <div class="intro__parallax">
         <div class="intro__wrapper">
             <div class="intro__bg">
-                <img src="/images/intro.webp" alt="" class="intro__bg-image">
+
+                <picture>
+                    <source srcset="/images/intro-mobile.webp" media="(max-width: 640px)" />
+                    <img src="/images/intro.webp" alt="" class="intro__bg-image" />
+                </picture>
+                <picture>
+                    <source srcset="/images/illustrations/intro-mobile.webp" media="(max-width: 640px)" />
+                    <img src="/images/illustrations/intro.webp" alt="" class="intro__illustration" loading="lazy" />
+                </picture>
             </div>
             <div class="intro__content">
                 <h1 class="intro__title">

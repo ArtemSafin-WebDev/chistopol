@@ -28,6 +28,26 @@
   font-family: var(--dewi-expanded);
   margin-top: 15rem;
   max-width: 140rem;
+
+  img {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    width: 32rem;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0.2em;
+    body.decorated & {
+      opacity: 1;
+    }
+
+    @include media.breakpoint(mobile) {
+      width: 12rem;
+      margin-top: 0.1em;
+    }
+  }
   @include media.breakpoint(mobile) {
     font-size: 2.5rem;
     font-style: normal;

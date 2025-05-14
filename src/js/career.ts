@@ -19,6 +19,9 @@ export default function career() {
             trigger: element,
             start: "top bottom-=20%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".career__heading", {
           autoAlpha: 0,
@@ -54,6 +57,9 @@ export default function career() {
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=20%",
+          },
+          onComplete: () => {
+            element.classList.add("animation-complete");
           },
         });
         tl.from(".career__heading", {

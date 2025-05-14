@@ -34,6 +34,7 @@
         rgba(0, 0, 0, 0.14) 100%
       ),
       linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+
     @include media.breakpoint(mobile) {
       background: linear-gradient(
           0deg,
@@ -53,6 +54,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.intro__illustration {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 1;
+
+  body.decorated & {
+    opacity: 1;
+  }
 }
 
 .intro__content {

@@ -48,6 +48,22 @@
   object-fit: cover;
 }
 
+.mission__illustration {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  body.decorated & {
+    opacity: 1;
+  }
+}
+
 .mission__content {
   @include utils.blockContent;
   min-height: min(100vh, 96rem);

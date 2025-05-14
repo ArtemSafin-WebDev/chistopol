@@ -109,9 +109,28 @@
   border-radius: 4.5rem;
   border: 0.2rem solid var(--text-color);
   color: var(--text-color);
+  position: relative;
+  z-index: 1;
   &:link,
   &:visited {
     color: var(--text-color);
+  }
+
+  &::before {
+    content: "";
+    inset: -1.2rem;
+    background-image: url("../images/illustrations/career-outline.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
   }
 
   .career--dark & {
@@ -120,6 +139,16 @@
     &:link,
     &:visited {
       color: var(--biege);
+    }
+
+    &::before {
+      background-image: url("../images/illustrations/career-dark-outline.svg");
+    }
+  }
+
+  body.decorated .career.animation-complete & {
+    &::before {
+      opacity: 1;
     }
   }
 
@@ -148,7 +177,33 @@
   }
 }
 
+.career__illustration {
+  position: absolute;
+  bottom: 100%;
+  left: 2rem;
+  width: 87.4rem;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  @include media.breakpoint(mobile) {
+    left: auto;
+    right: 0.8rem;
+    width: 19.8rem;
+    margin-bottom: 2.2rem;
+    bottom: 100%;
+  }
+
+  body.decorated .career.animation-complete & {
+    opacity: 1;
+  }
+}
+
 .career__slider {
+  position: relative;
   .swiper {
     overflow: visible;
   }
