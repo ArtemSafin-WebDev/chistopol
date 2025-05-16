@@ -176,6 +176,12 @@
         text-transform: uppercase;
       }
     }
+
+    .achievements__card-text {
+      @include media.breakpoint(mobile) {
+        max-width: calc(50% - 1rem);
+      }
+    }
   }
 }
 

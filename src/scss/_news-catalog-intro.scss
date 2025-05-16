@@ -8,11 +8,38 @@
   margin-bottom: 8rem;
   background-color: var(--biege);
   color: var(--text-color);
+  position: relative;
+  z-index: 1;
 
   @include media.breakpoint(mobile) {
     padding-top: 10rem;
     padding-bottom: 4rem;
     margin-bottom: 4rem;
+  }
+}
+
+.news-catalog__illustration {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  object-position: center bottom;
+
+  body.decorated & {
+    opacity: 1;
+  }
+
+  @include media.breakpoint(mobile) {
+    object-position: center;
+    right: 3rem;
+    bottom: auto;
+    width: 8rem;
+    top: 10rem;
+    left: auto;
   }
 }
 

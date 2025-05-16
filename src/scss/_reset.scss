@@ -251,3 +251,8 @@ select:-webkit-autofill:focus {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+picture,
+source {
+  display: contents;
+}

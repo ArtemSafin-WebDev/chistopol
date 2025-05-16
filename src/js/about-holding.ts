@@ -14,6 +14,9 @@ export default function aboutHolding() {
           trigger: element,
           start: "top bottom-=20%",
         },
+        onComplete: () => {
+          element.classList.add("animation-complete");
+        },
       });
       tl.from(".about-holding__heading", {
         autoAlpha: 0,

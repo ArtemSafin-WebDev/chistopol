@@ -62,7 +62,7 @@
   height: auto;
   z-index: -1;
 
-  body.decorated & {
+  body.decorated .animation-complete & {
     opacity: 1;
   }
 
