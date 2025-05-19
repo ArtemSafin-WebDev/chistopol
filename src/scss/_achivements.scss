@@ -194,6 +194,7 @@
   flex-grow: 1;
   position: relative;
   isolation: isolate;
+  padding-top: 3rem;
 
   picture,
   source {
@@ -202,6 +203,8 @@
 
   @include media.breakpoint(mobile) {
     padding: 2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.7rem;
   }
 }
 

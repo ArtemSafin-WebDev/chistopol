@@ -19,6 +19,9 @@ export default function partners() {
             trigger: element,
             start: "top bottom-=30%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".partners__heading", {
           autoAlpha: 0,
@@ -53,6 +56,9 @@ export default function partners() {
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=20%",
+          },
+          onComplete: () => {
+            element.classList.add("animation-complete");
           },
         });
         tl.from(".partners__heading", {

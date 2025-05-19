@@ -17,6 +17,9 @@ export default function subjects() {
             trigger: element,
             start: "top bottom-=30%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".subjects__heading", {
           autoAlpha: 0,
@@ -43,17 +46,25 @@ export default function subjects() {
             trigger: element,
             start: "top bottom-=30%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".subjects__heading", {
           autoAlpha: 0,
           duration: 0.7,
           y: 30,
         });
-        tl.from(".subjects__row", {
-          autoAlpha: 0,
-          duration: 1.4,
-          y: 30,
-        });
+        tl.from(
+          ".subjects__row",
+          {
+            autoAlpha: 0,
+            duration: 1.4,
+            // y: 30,
+            ease: "power3.out",
+          },
+          ">-=0.15"
+        );
       },
       element
     );

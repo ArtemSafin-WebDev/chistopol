@@ -17,6 +17,9 @@ export default function news() {
             trigger: element,
             start: "top bottom-=20%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".news__heading", {
           autoAlpha: 0,
@@ -52,6 +55,9 @@ export default function news() {
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=20%",
+          },
+          onComplete: () => {
+            element.classList.add("animation-complete");
           },
         });
         tl.from(".news__heading", {

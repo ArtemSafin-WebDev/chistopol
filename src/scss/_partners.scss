@@ -2,6 +2,7 @@
 @use "media";
 
 .partners {
+  position: relative;
   @include utils.blockWrapper;
   margin-bottom: 8rem;
 
@@ -10,10 +11,55 @@
   }
 }
 
+.partners__grass {
+  bottom: -8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  width: 140rem;
+  max-width: 100%;
+  position: absolute;
+  margin-bottom: -1.2rem;
+
+  opacity: 0;
+  body.decorated .animation-complete & {
+    opacity: 1;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+}
+
 .partners__content {
   @include utils.blockContent;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.partners__illustration {
+  display: none;
+  @include media.breakpoint(mobile) {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    top: 2.5rem;
+    right: 0;
+    width: 12.5rem;
+    height: auto;
+    display: block;
+
+    body.decorated .animation-complete & {
+      opacity: 1;
+    }
+  }
 }
 
 .partners__heading {
@@ -42,6 +88,31 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 4rem;
+  position: relative;
+
+  @include media.breakpointMF(small-tablet) {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 35.7rem;
+      height: 13.7rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("/images/illustrations/partners-line.svg");
+      background-position: center;
+      left: 0;
+      bottom: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    body.decorated .animation-complete & {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
   @include media.breakpoint(mobile) {
     order: 10;
     margin: 0;
