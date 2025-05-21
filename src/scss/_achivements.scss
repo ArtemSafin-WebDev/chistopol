@@ -100,9 +100,33 @@
   border-radius: 4.5rem;
   border: 0.2rem solid var(--text-color);
   color: var(--text-color);
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    inset: -1.2rem;
+    background-image: url("../images/illustrations/about-outline.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
   &:link,
   &:visited {
     color: var(--text-color);
+  }
+
+  body.decorated .achievements.animation-complete & {
+    &::before {
+      opacity: 1;
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {

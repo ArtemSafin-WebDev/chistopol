@@ -19,6 +19,9 @@ export default function ourTeam() {
             trigger: element,
             start: "top bottom-=20%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".our-team__heading", {
           autoAlpha: 0,
@@ -54,6 +57,9 @@ export default function ourTeam() {
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=20%",
+          },
+          onComplete: () => {
+            element.classList.add("animation-complete");
           },
         });
         tl.from(".our-team__heading", {

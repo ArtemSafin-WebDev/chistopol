@@ -16,6 +16,28 @@
   @include utils.blockContent;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.subjects-intro__illustration {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  width: 65.7rem;
+  height: auto;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+
+  body.decorated & {
+    opacity: 1;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
 }
 
 .subjects-intro__heading {

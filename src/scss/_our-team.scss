@@ -33,6 +33,23 @@
   text-transform: uppercase;
   font-family: var(--dewi-expanded);
   margin-bottom: 12rem;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  img {
+    flex-shrink: 0;
+    width: 25.5rem;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  body.decorated .our-team.animation-complete & {
+    img {
+      opacity: 1;
+    }
+  }
   @include media.breakpoint(mobile) {
     font-size: 1.8rem;
     font-style: normal;
@@ -41,6 +58,46 @@
     letter-spacing: -0.054rem;
     text-transform: uppercase;
     margin-bottom: 6rem;
+    gap: 1.5rem;
+
+    img {
+      width: 12rem;
+    }
+  }
+}
+
+.our-team__heading-text {
+  position: relative;
+  z-index: 1;
+  display: block;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: 1.1rem;
+    width: 100%;
+    background-image: url("../images/illustrations/team-underline.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+    margin-top: 0.7rem;
+    @include media.breakpoint(mobile) {
+      width: auto;
+      left: -0.5rem;
+      right: -0.5rem;
+      height: 0.5rem;
+      background-image: url("../images/illustrations/team-underline-mobile.svg");
+    }
+  }
+
+  body.decorated .our-team.animation-complete & {
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
@@ -329,5 +386,37 @@
     opacity: 1;
     visibility: inherit;
     transition: opacity 0.4s, visibility 0.4s;
+  }
+}
+
+.our-team__more-text-wrapper {
+  position: relative;
+  z-index: 1;
+  display: block;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 0.53rem;
+    left: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/illustrations/our-team-zieg.svg");
+    background-position: center;
+    pointer-events: none;
+    transition: opacity 0.4s;
+    opacity: 0;
+    margin-top: 1rem;
+    @include media.breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  body.decorated .our-team.animation-complete & {
+    &::before {
+      opacity: 1;
+    }
   }
 }
