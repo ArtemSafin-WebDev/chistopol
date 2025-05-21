@@ -88,6 +88,22 @@
     }
   }
 
+  &--subject {
+    &::before {
+      background-image: url("../images/illustrations/subject-our-products-underline.svg");
+      height: 1.6rem;
+    }
+
+    @include media.breakpoint(mobile) {
+      &::before {
+        background-image: url("../images/illustrations/subject-our-products-underline-mobile.svg");
+        height: 0.5rem;
+      }
+
+      width: min-content;
+    }
+  }
+
   body.decorated & {
     &::before {
       opacity: 1;

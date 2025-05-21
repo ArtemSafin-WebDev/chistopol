@@ -22,6 +22,9 @@ export default function subjectNumbers() {
             trigger: element,
             start: "top bottom-=20%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".subject-numbers__heading", {
           autoAlpha: 0,
@@ -91,6 +94,9 @@ export default function subjectNumbers() {
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=20%",
+          },
+          onComplete: () => {
+            element.classList.add("animation-complete");
           },
         });
         tl.from(".subject-numbers__heading", {

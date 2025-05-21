@@ -42,6 +42,23 @@
     );
   }
 }
+
+.subject-intro__illustration {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  body.decorated & {
+    opacity: 1;
+  }
+}
 .subject-intro__bg-image {
   position: absolute;
   left: 0;

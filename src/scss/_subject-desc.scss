@@ -38,11 +38,40 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 2rem;
+  position: relative;
+  z-index: 1;
   @include media.breakpoint(mobile) {
     display: flex;
     flex-direction: column;
     gap: 3rem;
   }
+}
+
+.subject-desc__illustration-wrapper {
+  position: absolute;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  z-index: -1;
+  pointer-events: none;
+  align-self: flex-end;
+  justify-self: stretch;
+  margin-left: -4rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+
+  body.decorated .subject-desc.animation-complete & {
+    opacity: 1;
+  }
+}
+
+.subject-desc__illustration {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .subject-desc__secondary-heading {

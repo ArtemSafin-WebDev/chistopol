@@ -17,6 +17,9 @@ export default function subjectDesc() {
             trigger: element,
             start: "top bottom-=20%",
           },
+          onComplete: () => {
+            element.classList.add("animation-complete");
+          },
         });
         tl.from(".subject-desc__heading", {
           autoAlpha: 0,
@@ -42,6 +45,9 @@ export default function subjectDesc() {
           scrollTrigger: {
             trigger: element,
             start: "top bottom-=20%",
+          },
+          onComplete: () => {
+            element.classList.add("animation-complete");
           },
         });
         tl.from(".subject-desc__heading", {
