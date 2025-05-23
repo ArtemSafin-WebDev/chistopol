@@ -13,6 +13,7 @@ import subject from "./pages-data/subject";
 import catalog from "./pages-data/catalog";
 import category from "./pages-data/category";
 import productDetail from "./pages-data/productDetail";
+import subject2 from "./pages-data/subject-2";
 
 const pagesConfig = {
   ...home,
@@ -30,6 +31,7 @@ const pagesConfig = {
   ...catalog,
   ...category,
   ...productDetail,
+  ...subject2,
 };
 
 export default pagesConfig;
