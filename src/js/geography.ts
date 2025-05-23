@@ -8,9 +8,7 @@ export default function geography() {
     document.querySelectorAll<HTMLElement>(".geography")
   );
   elements.forEach((element) => {
-    const points = Array.from(
-      element.querySelectorAll(".geography__point-item")
-    );
+    const points = Array.from(element.querySelectorAll(".geography__point"));
     const popovers = Array.from(
       element.querySelectorAll<HTMLElement>(".geography__popover")
     );
@@ -24,9 +22,7 @@ export default function geography() {
     });
 
     points.forEach((point) => {
-      const button = point.querySelector<HTMLButtonElement>(
-        ".geography__point-icon"
-      );
+      const button = point;
 
       button?.addEventListener("click", (event) => {
         console.log("Clicked on the point");
@@ -62,8 +58,8 @@ export default function geography() {
     element.addEventListener("click", (event) => {
       const target = event.target as HTMLElement;
       if (
-        target.matches(".geography__point-item") ||
-        target.closest(".geography__point-item")
+        target.matches(".geography__point") ||
+        target.closest(".geography__point")
       )
         return;
       const activePopover = popovers.find((popover) =>

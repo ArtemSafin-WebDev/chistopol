@@ -346,20 +346,11 @@
   border: 1px solid var(---white, #fff);
   background: rgba(255, 255, 255, 0.4);
   gap: 0.25rem;
-
-  @include media.breakpoint(mobile) {
-    padding: 0.6rem;
-  }
-
-  &:has(.geography__point-item.active) {
-    z-index: 10;
-  }
-}
-
-.geography__point-item {
-  position: relative;
+  cursor: pointer;
+  z-index: 10;
 
   &.active {
+    z-index: 15;
     .geography__point-icon {
       svg.icon-weed {
         fill: #ffcc55;
@@ -386,6 +377,18 @@
       transition: opacity 0.4s, visibility 0.4s;
     }
   }
+
+  @include media.breakpoint(mobile) {
+    padding: 0.6rem;
+  }
+
+  &:has(.geography__point-item.active) {
+    z-index: 10;
+  }
+}
+
+.geography__point-item {
+  position: relative;
 }
 
 .geography__point-icon {
