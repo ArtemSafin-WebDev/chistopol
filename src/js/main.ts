@@ -14,9 +14,9 @@ import modals from "./modals";
 import forms from "./forms";
 import ourTeam from "./ourTeam";
 import values from "./values";
-import aboutGallery from "./about-gallery";
-import aboutIntro from "./about-intro";
-import aboutHolding from "./about-holding";
+import aboutGallery from "./aboutGallery";
+import aboutIntro from "./aboutIntro";
+import aboutHolding from "./aboutHolding";
 import mission from "./mission";
 import achievements from "./achivements";
 import team from "./team";
@@ -33,12 +33,14 @@ import subjectsCategories from "./subjectsCategories";
 import subjectIntro from "./subjectIntro";
 import subjectNumbers from "./subjectNumbers";
 import subjectDesc from "./subjectDesc";
+import fixedHeader from "./fixedHeader";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   modals();
   fileUpload();
   menu();
+  fixedHeader();
   search();
   toggleVersions();
   intro();

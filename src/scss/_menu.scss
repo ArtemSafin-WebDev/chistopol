@@ -70,7 +70,8 @@
   gap: 1rem;
 }
 
-.menu__search {
+.menu__search,
+.menu__mobile-search {
   width: 4rem;
   height: 4rem;
   display: grid;
@@ -109,6 +110,19 @@
         fill: var(--text-color);
       }
     }
+  }
+}
+
+.menu__mobile-search {
+  display: none;
+  @include media.breakpoint(mobile) {
+    display: block;
+  }
+}
+
+.menu__search {
+  @include media.breakpoint(mobile) {
+    display: none;
   }
 }
 

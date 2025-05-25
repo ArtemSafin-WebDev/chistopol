@@ -28,6 +28,15 @@
   }
 
   @include utils.blockWrapper;
+
+  @include media.breakpoint(mobile) {
+    position: fixed;
+    transition: transform 0.4s;
+
+    .header-hidden & {
+      transform: translateY(-100%);
+    }
+  }
 }
 
 .page-header__content {
@@ -36,7 +45,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 2rem;
   align-items: center;
-  padding: 3rem 0;
+  padding: 4rem 0;
 
   @include media.breakpoint(mobile) {
     padding: 1rem 0;
@@ -49,8 +58,39 @@
 .page-header__left {
   display: flex;
   align-items: center;
+  justify-self: flex-start;
+
+  @include media.breakpointMF(small-tablet) {
+    position: fixed;
+    left: 0;
+    top: 3rem;
+    pointer-events: none;
+    @include utils.blockWrapper;
+    z-index: 80;
+  }
   @include media.breakpoint(mobile) {
     display: contents;
+  }
+}
+
+.page-header__left-inner {
+  display: flex;
+  align-items: center;
+  @include media.breakpointMF(small-tablet) {
+    @include utils.blockContent;
+    transition: transform 0.4s;
+    .header-hidden & {
+      transform: translateY(-10rem);
+    }
+  }
+  @include media.breakpoint(mobile) {
+    display: contents;
+  }
+}
+.page-header__right {
+  grid-column: 2 / 3;
+  @include media.breakpoint(mobile) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -59,6 +99,7 @@
   margin-right: 17rem;
   position: relative;
   z-index: 20;
+  pointer-events: all;
 
   @include media.breakpoint(mobile) {
     margin: 0;
@@ -87,6 +128,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 20;
+  pointer-events: all;
   @include media.breakpoint(mobile) {
     justify-self: center;
     grid-area: toggles;
