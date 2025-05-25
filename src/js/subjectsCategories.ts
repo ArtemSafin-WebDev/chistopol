@@ -19,6 +19,7 @@ export default function subjectsCategories() {
         ".subjects-categories__card-dropdown"
       );
       clickableArea?.addEventListener("click", (event) => {
+        window.leaveButtonsAtTheSameState = true;
         event.preventDefault();
         accordions.forEach((someAccordion) => {
           if (someAccordion === accordion) return;
@@ -29,6 +30,7 @@ export default function subjectsCategories() {
 
       dropdown?.addEventListener("transitionend", () => {
         ScrollTrigger.refresh();
+        window.leaveButtonsAtTheSameState = false;
       });
     });
   });

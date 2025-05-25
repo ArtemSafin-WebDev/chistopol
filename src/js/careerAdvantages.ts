@@ -20,6 +20,7 @@ export default function careerAdvantages() {
         ".career-advantages__card-dropdown"
       );
       const handleClick = (event: MouseEvent) => {
+        window.leaveButtonsAtTheSameState = true;
         event.preventDefault();
         elements.forEach((otherElement) => {
           if (otherElement === element) return;
@@ -30,6 +31,7 @@ export default function careerAdvantages() {
 
       const handleLayoutChange = () => {
         ScrollTrigger.refresh();
+        window.leaveButtonsAtTheSameState = false;
       };
 
       btn?.addEventListener("click", handleClick);

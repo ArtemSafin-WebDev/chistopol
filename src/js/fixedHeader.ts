@@ -23,15 +23,18 @@ export default function fixedHeader() {
 
   window.addEventListener("resize", debounce(checkHeader, 300));
 
-  ScrollTrigger.create({
-    onUpdate: (self) => {
-      const direction = self.direction;
+  const handleUpdate = (self: globalThis.ScrollTrigger) => {
+    if (window.leaveButtonsAtTheSameState) return;
+    const direction = self.direction;
 
-      if (direction === 1) {
-        document.body.classList.add("header-hidden");
-      } else {
-        document.body.classList.remove("header-hidden");
-      }
-    },
+    if (direction === 1) {
+      document.body.classList.add("header-hidden");
+    } else {
+      document.body.classList.remove("header-hidden");
+    }
+  };
+
+  ScrollTrigger.create({
+    onUpdate: handleUpdate,
   });
 }

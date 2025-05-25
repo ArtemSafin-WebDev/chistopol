@@ -20,6 +20,7 @@ export default function values() {
       if (!clickableArea) return;
 
       clickableArea.addEventListener("click", (event) => {
+        window.leaveButtonsAtTheSameState = true;
         event.preventDefault();
         accordions.forEach((otherAccordion) => {
           if (otherAccordion !== accordion)
@@ -34,6 +35,7 @@ export default function values() {
       if (!dropdown) return;
       dropdown.addEventListener("transitionend", () => {
         ScrollTrigger.refresh();
+        window.leaveButtonsAtTheSameState = false;
       });
     });
   });

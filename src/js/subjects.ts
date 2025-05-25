@@ -110,6 +110,7 @@ export default function subjects() {
       );
 
       btn?.addEventListener("click", (event) => {
+        window.leaveButtonsAtTheSameState = true;
         event.preventDefault();
         accordions.forEach((accordion) => accordion.classList.remove("active"));
         accordion.classList.add("active");
@@ -124,6 +125,8 @@ export default function subjects() {
 
       content?.addEventListener("transitionend", () => {
         ScrollTrigger.refresh();
+
+        window.leaveButtonsAtTheSameState = false;
       });
     });
   });
