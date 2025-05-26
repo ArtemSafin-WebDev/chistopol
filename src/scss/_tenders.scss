@@ -4,6 +4,8 @@
 .tenders {
   @include utils.blockWrapper;
   background-color: #e6e3d6;
+  position: relative;
+  z-index: 15;
 }
 
 .tenders__content {
@@ -23,6 +25,31 @@
   line-height: 100%;
   text-transform: uppercase;
   margin-bottom: 14rem;
+  position: relative;
+  margin-right: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 0.7rem;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 0.5305rem;
+    pointer-events: none;
+    background-image: url("/images/illustrations/tenders-underline.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+  }
+
+  body.decorated & {
+    &::before {
+      opacity: 1;
+    }
+  }
 
   @include media.breakpoint(mobile) {
     font-size: 1.2rem;
@@ -31,6 +58,30 @@
     line-height: 120%;
     text-transform: uppercase;
     margin-bottom: 6rem;
+  }
+}
+
+.tenders__wrapper {
+  position: relative;
+}
+
+.tenders__birds {
+  position: absolute;
+  bottom: 100%;
+  width: 12.5rem;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  right: 2.6rem;
+  opacity: 0;
+  display: none;
+
+  @include media.breakpoint(mobile) {
+    display: block;
+  }
+
+  body.decorated & {
+    opacity: 1;
   }
 }
 
@@ -151,6 +202,38 @@
   margin-left: auto;
   transition: background-color 0.2s, border-color 0.2s;
   border: 1px solid var(--text-color);
+  position: relative;
+  z-index: 1;
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: white;
+    transition: fill 0.2s;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    pointer-events: none;
+    transition: transform 0.4s, fill 0.2s, opacity 0.4s;
+    opacity: 0;
+    background-image: url("/images/illustrations/tenders-btn.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  body.decorated & {
+    &::before {
+      opacity: 1;
+    }
+  }
+
   @include media.breakpoint(mobile) {
     margin: 0;
     align-self: flex-start;
@@ -158,12 +241,5 @@
     width: 4rem;
     height: 4rem;
     grid-area: arrow;
-  }
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: white;
-    transition: fill 0.2s;
   }
 }

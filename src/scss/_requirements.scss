@@ -13,6 +13,7 @@
   @include utils.blockContent;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .requiements__row {
@@ -39,8 +40,29 @@
 
 .requirements__right {
   grid-area: right;
+  position: relative;
   @include media.breakpoint(mobile) {
     display: contents;
+  }
+}
+
+.requirements__flower {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  margin-bottom: -7rem;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.4s;
+  width: 66.4rem;
+  height: auto;
+
+  @include media.breakpoint(mobile) {
+    display: none;
+  }
+  body.decorated & {
+    opacity: 1;
   }
 }
 
@@ -62,9 +84,46 @@
     line-height: 100%;
     letter-spacing: -0.054rem;
     text-transform: uppercase;
+    padding-right: 7rem;
   }
 }
 
+.requirements__wrapper {
+  margin-top: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 4rem;
+  @include media.breakpoint(mobile) {
+    order: 60;
+
+    display: contents;
+    position: static;
+  }
+}
+
+.requirements__birds {
+  position: absolute;
+  width: 34.2rem;
+  height: auto;
+  right: -13rem;
+  bottom: 100%;
+  margin-bottom: 5.8rem;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.4s;
+
+  @include media.breakpoint(mobile) {
+    right: 1.6rem;
+    top: -3.6rem;
+    margin: 0;
+    width: 8rem;
+  }
+
+  body.decorated & {
+    opacity: 1;
+  }
+}
 .requirements__image-wrapper {
   width: 68rem;
   max-width: 100%;
@@ -98,7 +157,7 @@
 }
 
 .requirements__card {
-  padding: 4rem 0;
+  padding: 3.5rem 0;
   display: flex;
   flex-direction: column;
   font-size: 2rem;

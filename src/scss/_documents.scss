@@ -4,9 +4,34 @@
 .documents {
   @include utils.blockWrapper;
   margin-bottom: 8rem;
+  position: relative;
 
   @include media.breakpoint(mobile) {
     margin-bottom: 4rem;
+  }
+}
+
+.documents__grass {
+  bottom: -8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  transition: opacity 0.4s;
+  width: 140rem;
+  max-width: 100%;
+  position: absolute;
+  margin-bottom: -1.2rem;
+
+  opacity: 0;
+
+  body.decorated & {
+    opacity: 1;
+  }
+
+  @include media.breakpoint(mobile) {
+    display: none;
   }
 }
 
