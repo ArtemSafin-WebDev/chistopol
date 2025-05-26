@@ -28,6 +28,7 @@
   pointer-events: none;
   transition: opacity 0.4s;
   object-position: center bottom;
+  opacity: 0;
 
   body.decorated & {
     opacity: 1;

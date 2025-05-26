@@ -7,9 +7,11 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function smoothScrolling() {
-  if (history.scrollRestoration) {
-    history.scrollRestoration = "manual";
-  }
+  // if (history.scrollRestoration) {
+  //   history.scrollRestoration = "manual";
+  // }
+
+  const hasLoader = !!document.querySelector<HTMLElement>(".loader");
 
   let lenis: Lenis | null = null;
 
@@ -21,14 +23,14 @@ export default function smoothScrolling() {
         window.matchMedia("(max-width: 640px)").matches,
     });
 
-    // if (window.sessionStorage.getItem("loaderShown") !== "Y") {
-    //   lenis.on("scroll", ScrollTrigger.update);
-    //   lenis.stop();
-    // }
+    if (hasLoader && window.sessionStorage.getItem("loaderShown") !== "Y") {
+      lenis.on("scroll", ScrollTrigger.update);
+      lenis.stop();
+    }
 
-    // document.addEventListener("loader:hidden", () => {
-    //   lenis?.start();
-    // });
+    document.addEventListener("loader:hidden", () => {
+      lenis?.start();
+    });
 
     gsap.ticker.add((time) => {
       if (lenis) {

@@ -48,6 +48,7 @@
   z-index: -1;
   pointer-events: none;
   transition: opacity 0.4s;
+  opacity: 0;
 
   body.decorated .animation-complete & {
     opacity: 1;

@@ -34,6 +34,7 @@ import subjectIntro from "./subjectIntro";
 import subjectNumbers from "./subjectNumbers";
 import subjectDesc from "./subjectDesc";
 import fixedHeader from "./fixedHeader";
+import loader from "./loader";
 
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   subjectIntro();
   subjectNumbers();
   subjectDesc();
+  loader();
 });
 
 window.addEventListener("load", () => {

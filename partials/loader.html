@@ -1,0 +1,171 @@
+<style>
+    @font-face {
+        font-family: 'RF Dewi Expanded';
+        font-display: block;
+        src: url('/fonts/RFDewiExpanded-Black.woff2') format('woff2');
+        font-weight: 900;
+        font-style: normal;
+    }
+
+    html {
+        font-size: 62.5%;
+        font-size: clamp(2px, 0.52vw, 125px);
+    }
+
+    @media only screen and (max-width: 640px) {
+        html {
+            font-size: 62.5%;
+        }
+
+    }
+
+    @media only screen and (max-width: 320px) {
+        html {
+            font-size: 54%;
+        }
+
+    }
+
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #313131;
+        color: #e6e3d6;
+        z-index: 2000;
+        display: grid;
+        --content-padding: 4rem;
+        --container-width: 184rem;
+        grid-template-columns:
+            [main-start] 1fr [content-start] minmax(0, var(--container-width, 0)) [content-end] 1fr [main-end];
+        grid-gap: var(--content-padding, 0);
+    }
+
+    .loader-already-shown .loader {
+        display: none !important;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .loader {
+            --content-padding: 1.6rem;
+        }
+    }
+
+    .loader__inner {
+        grid-column-start: content-start;
+        grid-column-end: content-end;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .loader__title {
+        font-size: 9rem;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 110%;
+        letter-spacing: -0.09rem;
+        text-transform: uppercase;
+        font-family: "RF Dewi Expanded", sans-serif;
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        bottom: 10rem;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .fonts-loaded .loader__title {
+        opacity: 1;
+    }
+
+    @media only screen and (max-width: 640px) {
+        .loader__title {
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 110%;
+            letter-spacing: -0.025rem;
+            text-transform: uppercase;
+            bottom: 3rem;
+        }
+    }
+
+    .loader__logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 50;
+        width: 4.8rem;
+        height: auto;
+    }
+
+    .loader__logo svg {
+        display: block;
+        width: 100%;
+    }
+
+    .loader__logo svg path {
+        clip-path: inset(100% 0 0 0);
+    }
+
+    @media only screen and (max-width: 640px) {
+        .loader__logo {
+            width: 3rem;
+        }
+    }
+</style>
+
+
+<script>
+    if (window.sessionStorage.getItem("loaderShown") === "Y") {
+        document.body.classList.add("loader-already-shown");
+    }
+</script>
+
+<div class="loader">
+    <div class="loader__overlay"></div>
+    <div class="loader__inner">
+
+        <h3 class="loader__title">
+            Чистополье
+        </h3>
+        <div class="loader__logo">
+            <svg fill="none" viewBox="0 0 90 160" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <clipPath id="a">
+                    <path d="m0 0h89.58v159.53h-89.58z" />
+                </clipPath>
+                <g clip-path="url(#a)" fill="#e6e3d6">
+                    <path
+                        d="m.649996 90.8105c-.172391 0-.337696.0685-.459595.1904-.1218986.1219-.19036863.2873-.19036863.4596v29.3505c-.00657034 5.078.98715663 10.108 2.92443763 14.802 1.93728 4.694 4.7802 8.961 8.36643 12.556 3.5862 3.596 7.8454 6.449 12.5346 8.399 4.6891 1.949 9.7163 2.956 14.7945 2.963.1724 0 .3377-.069.4596-.191s.1905-.287.1905-.459v-29.34c.0078-5.08-.9849-10.11-2.9216-14.806-1.9367-4.695-4.7794-8.963-8.3657-12.559-3.5864-3.5969-7.8461-6.4518-12.5359-8.4018s-9.71784-2.9571-14.796904-2.9637z" />
+                    <path
+                        d="m88.9301 76.0801c.0862 0 .1716.0171.2511.0504s.1516.082.2121.1435c.0605.0614.1081.1342.1402.2143.032.08.0479.1656.0466.2518v29.3399c.0079 5.078-.9846 10.107-2.9208 14.802-1.9362 4.694-4.7782 8.96-8.3636 12.556s-7.844 6.45-12.5326 8.399c-4.6885 1.95-9.7153 2.957-14.793 2.963-.1734 0-.3398-.068-.4632-.19-.1235-.121-.1942-.287-.1968-.46v-29.34c-.0106-10.256 4.0513-20.0966 11.2931-27.359s17.0708-11.3524 27.3269-11.3709z" />
+                    <path
+                        d="m11.35 46.6291c-.0805 0-.1578.0313-.2157.0872-.0578.056-.0917.1323-.0943.2128v21.1c.0318 7.374 2.9909 14.4334 8.2267 19.6261 5.2357 5.1926 12.3194 8.0932 19.6933 8.0639.0403.0014.0804-.0054.1179-.0199.0376-.0145.0718-.0363.1007-.0643.029-.028.052-.0615.0677-.0986s.0238-.0769.0238-.1172v-21.11c-.0344-7.3722-2.9947-14.4291-8.2302-19.6195-5.2354-5.1905-12.3176-8.0897-19.6899-8.0605z" />
+                    <path
+                        d="m78.23 33.1609c.0389-.0028.078.0024.1148.0152.0369.0127.0708.0327.0998.0589.0289.0261.0523.0578.0687.0932s.0255.0737.0267.1127v20.59c0 14.89-12.4799 26.9999-27.9199 26.9999-.078.0028-.1539-.0249-.2118-.0771-.0578-.0523-.0931-.125-.0982-.2028v-20.59c0-14.92 12.4799-27 27.9199-27z" />
+                    <path
+                        d="m23.3201 33.1594c.0158 4.2244 1.7016 8.2711 4.6897 11.2573 2.988 2.9862 7.0359 4.6695 11.2603 4.6827v-12.29c-.0132-4.2262-1.6979-8.2755-4.6862-11.2638-2.9884-2.9884-7.0377-4.673-11.2638-4.6862z" />
+                    <path
+                        d="m69.91.00020931v14.95999069c-.0131 2.5608-.5304 5.0939-1.5225 7.4548-.9921 2.3608-2.4395 4.5031-4.2595 6.3046-1.82 1.8014-3.9771 3.2268-6.348 4.1946s-4.9092 1.4592-7.4699 1.446v-14.96c.0291-5.1709 2.1098-10.11876 5.7849-13.75641 3.6752-3.63764 8.6441-5.6675165 13.815-5.64358069z" />
+
+
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.fonts.ready.then(function () {
+        document.documentElement.classList.add('fonts-loaded');
+    });
+</script>
