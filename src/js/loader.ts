@@ -37,7 +37,7 @@ export default function loader() {
       loaderTitle,
       {
         bottom: "50%",
-        xPercent: -50,
+        // xPercent: -50,
         yPercent: 50,
         ease: "power2.out",
         duration: 1,
