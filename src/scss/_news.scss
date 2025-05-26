@@ -54,6 +54,10 @@
     opacity: 1;
   }
 
+  .news--other & {
+    top: 1.8rem;
+  }
+
   @include media.breakpoint(mobile) {
     display: none;
   }
@@ -89,6 +93,12 @@
     transition: opacity 0.4s;
     pointer-events: none;
     margin-top: 1.5rem;
+  }
+
+  .news--other & {
+    &::before {
+      background-image: url("../images/illustrations/news-heading-wave-dark.svg");
+    }
   }
 
   body.decorated .animation-complete & {
@@ -173,6 +183,11 @@
     margin-top: 0.7rem;
     @include media.breakpoint(mobile) {
       display: none;
+    }
+  }
+  .news--other & {
+    &::before {
+      background-image: url("../images/illustrations/news-underline-dark.svg");
     }
   }
 
