@@ -35,7 +35,7 @@ import subjectNumbers from "./subjectNumbers";
 import subjectDesc from "./subjectDesc";
 import fixedHeader from "./fixedHeader";
 import loader from "./loader";
-
+import cookies from "./cookies";
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrolling();
   modals();
@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   subjectIntro();
   subjectNumbers();
   subjectDesc();
+  cookies();
   loader();
 });
 
