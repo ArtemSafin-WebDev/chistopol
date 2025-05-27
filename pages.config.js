@@ -14,6 +14,7 @@ import catalog from "./pages-data/catalog";
 import category from "./pages-data/category";
 import productDetail from "./pages-data/productDetail";
 import subject2 from "./pages-data/subject-2";
+import search from "./pages-data/search";
 
 const pagesConfig = {
   ...home,
@@ -32,6 +33,7 @@ const pagesConfig = {
   ...category,
   ...productDetail,
   ...subject2,
+  ...search,
 };
 
 export default pagesConfig;
