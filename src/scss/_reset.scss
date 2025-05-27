@@ -263,3 +263,35 @@ picture,
 source {
   display: contents;
 }
+
+.fancybox__container.is-compact
+  .fancybox__slide.rutube-player
+  .fancybox__content {
+  position: relative;
+  width: 100%;
+  max-width: 120rem;
+  height: auto;
+  iframe {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* For all other cases */
+.fancybox__slide.rutube-player .fancybox__content {
+  position: relative;
+  width: 100%;
+  max-width: 120rem;
+  height: auto;
+  @include media.breakpoint(mobile) {
+    padding: 1rem;
+  }
+  iframe {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
