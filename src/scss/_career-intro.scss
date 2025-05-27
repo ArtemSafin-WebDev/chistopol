@@ -5,6 +5,8 @@
   @include utils.blockWrapper;
   padding-top: 18rem;
   margin-bottom: 15rem;
+  position: relative;
+  z-index: 1;
 
   @include media.breakpoint(mobile) {
     padding-top: 10rem;
@@ -16,6 +18,28 @@
   @include utils.blockContent;
   display: flex;
   flex-direction: column;
+}
+
+.career-intro__illustration {
+  position: absolute;
+  top: 11rem;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+  width: 145.5rem;
+  height: auto;
+  transition: opacity 0.4s;
+  pointer-events: none;
+
+  @include media.breakpoint(mobile) {
+    width: 12rem;
+    top: 10rem;
+    right: var(--content-padding);
+  }
+
+  body.decorated & {
+    opacity: 1;
+  }
 }
 
 .career-intro__main-heading {
