@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-export default function loader() {
+export default async function loader() {
   const loader = document.querySelector<HTMLElement>(".loader");
 
   if (!loader) return;
@@ -50,9 +50,13 @@ export default function loader() {
       duration: 1,
       ease: "power3.out",
     });
+
+    return tl;
   };
 
-  setTimeout(() => {
-    loaderAnimation();
-  }, 1000);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(loaderAnimation());
+    }, 1000);
+  });
 }

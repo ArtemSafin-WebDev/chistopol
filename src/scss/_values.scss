@@ -293,6 +293,7 @@
     transition: background-color 0.2s, transform 0.2s;
     @include media.breakpoint(mobile) {
       width: 0.9rem;
+      height: 1px;
     }
   }
 

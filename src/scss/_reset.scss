@@ -45,6 +45,7 @@ body {
   flex-direction: column;
   overscroll-behavior: none;
   font-family: var(--dewi);
+  color: var(--text-color);
 }
 
 body.menu-open,

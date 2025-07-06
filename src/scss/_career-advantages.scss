@@ -328,7 +328,7 @@
   @include media.breakpoint(mobile) {
     display: block;
     flex-shrink: 0;
-    border: 0.15rem solid var(--text-color);
+    border: 1px solid var(--text-color);
     background-color: var(--text-color);
     width: 4rem;
     height: 4rem;
@@ -343,7 +343,7 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 0.8rem;
-      height: 0.15rem;
+      height: 1px;
       background-color: white;
       transition: background-color 0.2s, transform 0.2s;
     }

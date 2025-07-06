@@ -36,7 +36,9 @@ import subjectDesc from "./subjectDesc";
 import fixedHeader from "./fixedHeader";
 import loader from "./loader";
 import cookies from "./cookies";
-document.addEventListener("DOMContentLoaded", () => {
+import category from "./category";
+
+document.addEventListener("DOMContentLoaded", async () => {
   smoothScrolling();
   modals();
   fileUpload();
@@ -73,7 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
   subjectNumbers();
   subjectDesc();
   cookies();
-  loader();
+  const categoryTl = category();
+  const loaderTl = await loader();
+  if (loaderTl) categoryTl?.play();
 });
 
 window.addEventListener("load", () => {

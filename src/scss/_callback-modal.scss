@@ -153,8 +153,15 @@ textarea.callback-modal__input {
 
 .callback-modal__form-policy {
   margin-top: 10rem;
+
+  .callback-modal--vacancy & {
+    margin-top: 8rem;
+  }
   @include media.breakpoint(mobile) {
     margin-top: 8rem;
+    .callback-modal--vacancy & {
+      margin-top: 4rem;
+    }
   }
 }
 

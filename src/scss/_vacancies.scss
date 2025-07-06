@@ -629,6 +629,14 @@
       transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
     }
   }
+
+  @include media.breakpoint(mobile) {
+    border-width: 1px;
+    &::before,
+    &::after {
+      height: 1px;
+    }
+  }
 }
 
 .vacancies__apply-btn {

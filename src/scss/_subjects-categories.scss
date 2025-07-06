@@ -356,6 +356,7 @@
     width: 40px;
     height: 40px;
     align-self: center;
+    border-width: 1px;
   }
 
   &::before,
@@ -371,7 +372,7 @@
     transition: transform 0.2s, background-color 0.2s;
     @include media.breakpoint(mobile) {
       width: 8px;
-      height: 2px;
+      height: 1px;
     }
   }
 
